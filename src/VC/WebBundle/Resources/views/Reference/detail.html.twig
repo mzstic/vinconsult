@@ -1,0 +1,41 @@
+{% extends '@VCWeb/layout.html.twig' %}
+
+{% block body %}
+    <div class="content no-photo">
+        <div class="reference">
+            <h3 style="margin-left: 1em;">
+                <a href="{{ path('vc_web_references_2', {display: 'grid', sort: 'default'}) }}"><i class="fa fa-angle-double-left"></i>&nbsp;Projekty</a>
+                &nbsp;&nbsp;|&nbsp;&nbsp;
+                <span style="font-size:1.25em;">{{ reference.title }}</span>
+            </h3>
+
+            <div id="detail-gallery" class="col-xs-12 gallery" style="padding: 0px !important; width: 100vw; left: 0;">
+
+                <div class="slick-slider js-slick-small" style="position: relative;" >
+                    {% for photo in reference.photos %}
+                        <div class="padding: 0 15px;">
+                            <a href="{{ asset(photo.webPath) }}" data-lightbox="photos">
+                                <img src="{{ photo.webPath|imagine_filter('projekty_thumb') }}" style="padding: 0 .5em;"/>
+                            </a>
+                        </div>
+
+                    {% endfor %}
+                </div>
+                <div class="clearfix"></div>
+                <div class="col-xs-8 col-xs-offset-2" style="margin-top: 2em;">
+                    <p>
+                        <strong>Stavba:</strong> {{ reference.building }}<br/>
+                        <strong>Místo:</strong> {{ reference.city }}, {{ reference.country }}<br/>
+                        <strong>Rok:</strong> {{ reference.year }}<br/>
+                        <strong>Investor:</strong> {{ reference.investor }}<br/>
+                        <strong>Rozsah služby:</strong> {{ reference.performances }}<br/>
+                    </p>
+                </div>
+                <div class="clearfix"></div>
+            </div>
+            <div class="clearfix"></div>
+
+        </div>
+        <div class="clearfix"></div>
+    </div>
+{% endblock %}

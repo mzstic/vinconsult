@@ -1,0 +1,19 @@
+{% extends "@VCAdmin/layout.html.twig" %}
+
+{% block content %}
+<div class="row">
+    <h2>Seznam exportů - <a href="{{ path('vc_admin_reference_export') }}">vytvořit aktuální verzi</a></h2>
+    <div class="text">
+        <p>
+            Zde je seznam exportů uložených na serveru. V názvu každého exportu je vidět, datum i čas, kdy byl vytvořen.
+            Pomocí tlačítka <strong>vytvořit akutální verzi</strong> se udělá export z akuálních dat.<br>
+            Aktuální verze exportu se také automaticky vytvoří před každým importem.
+        </p>
+    </div>
+    {% for file in files|reverse %}
+
+        <li><a href="{{ asset(file) }}">{{ file }}</a></li>
+
+    {% endfor %}
+</div>
+{% endblock %}

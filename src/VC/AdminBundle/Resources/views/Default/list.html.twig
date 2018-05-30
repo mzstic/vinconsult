@@ -1,0 +1,40 @@
+{% extends 'VCAdminBundle::layout.html.twig' %}
+
+{% block title %}
+
+{% endblock %}
+
+
+{%  block content %}
+
+    <div class="row">
+        <h2>Hlavní stránka{# - <a href="{{ path('vc_admin_home_boxes_edit') }}">nový box</a>#}</h2>
+        <p>
+            Následující fotky a texty jsou vidět na hlavní straně v tomto pořadí.
+        </p>
+        {% if boxes %}
+            <table class="table table-striped table-bordered table-hover">
+                <tr>
+                    <th>Nadpis</th>
+                    <th>Podnadpis</th>
+                    <th>Fotka</th>
+                    <th>Upravit</th>
+                </tr>
+            {% for box in boxes %}
+                <tr>
+                    <td>{{ box.title }}</td>
+                    <td>{{ box.subtitle }}</td>
+                    <td><img src="{{ box.photoWebPath|imagine_filter('reference_thumb') }}"/></td>
+                    <td>
+                        <a href="{{ path('vc_admin_home_boxes_edit', {id: box.id}) }}" class="btn btn-info btn-circle" title="Upravit"><i class="fa fa-pencil"></i></a>
+                    </td>
+                </tr>
+            {% endfor %}
+            </table>
+        {% else %}
+            <p>Žádné položky na hlavní straně nejsou.</p>
+        {% endif %}
+
+    </div>
+
+{% endblock %}

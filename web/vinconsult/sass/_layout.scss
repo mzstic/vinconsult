@@ -1,0 +1,34 @@
+body > * {
+  width: 100%;
+  text-align: center;
+  clear: both;
+  background-color: #f9f9f9;
+}
+
+.content {
+  margin: 0 auto 12em auto;
+  padding-top: 1px;
+  text-align: left;
+  max-width: $maxWidth;
+  &.no-photo {
+    padding-top: 130px;
+  }
+}
+.content-wide {
+  margin: 0 auto 4em auto;
+  padding-top: 130px;
+  text-align: left;
+}
+
+.slider {
+
+  background: $cGrey;
+}
+
+.slider .content {
+  padding: 0 1em;
+}
+
+.slider img {
+  display: block;
+}

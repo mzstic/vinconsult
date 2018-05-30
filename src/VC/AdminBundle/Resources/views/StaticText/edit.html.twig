@@ -1,0 +1,24 @@
+{% extends "VCAdminBundle::layout.html.twig" %}
+
+{% block title %}
+    {% if text.id %}
+        Editace textu
+    {% else %}
+        Nový text
+    {% endif %}
+{% endblock %}
+
+{% block content %}
+    <div class="row">
+    {% if text.id %}
+        <h2>
+            <a href="{{ path('vc_admin_static_text_edit', {id: text.id}) }}">Uprava stránky</a> -
+            <a href="{{ path('vc_admin_static_text_photos', {id: text.id}) }}">Upravit fotky</a> -
+            <a href="{{ path('vc_admin_static_text_upload', {id: text.id}) }}">Nahrát fotky</a>
+        </h2>
+    {% else %}
+        Nový text
+    {% endif %}
+        {{ form(form) }}
+    </div>
+{% endblock %}

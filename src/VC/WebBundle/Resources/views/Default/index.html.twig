@@ -1,0 +1,22 @@
+{% extends '@VCWeb/layout.home.html.twig' %}
+
+
+{% block slider %}
+
+{% endblock %}
+
+{% block body %}
+    <div class="slick-slider js-slick">
+    {% for box in homeBoxes %}
+        <div>
+            <div class="photo is-animating" style="background-image: url('{{ asset('home/' ~ box.photoPath) }}');">
+
+            </div>
+            <div class="photo-title">
+                <h2>{{ box.title }}</h2>
+                <h3>{{ box.subtitle }}</h3>
+            </div>
+        </div>
+    {% endfor %}
+    </div>
+{% endblock %}

@@ -1,0 +1,24 @@
+vc_admin:
+    resource: "@VCAdminBundle/Resources/config/routing.yml"
+    prefix:   /administrace/
+
+vc_web:
+    resource: "@VCWebBundle/Resources/config/routing.yml"
+    prefix:   /
+
+_liip_imagine:
+    resource: "@LiipImagineBundle/Resources/config/routing.xml"
+
+app:
+    resource: @AppBundle/Controller/
+    type:     annotation
+
+logout:
+    path:   /administrace/logout
+
+vc_admin_login:
+    path:     /login
+    defaults: { _controller: VCAdminBundle:Security:login }
+vc_admin_login_check:
+    path:     /administrace/login_check
+    defaults: { _controller: VCAdminBundle:Security:loginCheck }

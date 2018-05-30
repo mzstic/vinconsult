@@ -1,0 +1,68 @@
+/*
+Error: Undefined variable: "$maxWidth".
+        on line 8 of /var/www/html/vinconsult/web/vinconsult/sass/layout.scss
+
+3:   text-align: center;
+4: }
+5: 
+6: .content {
+7:   text-align: left;
+8:   width: $maxWidth;
+9: }
+
+Backtrace:
+/var/www/html/vinconsult/web/vinconsult/sass/layout.scss:8
+/home/scarface/.gem/ruby/gems/sass-3.4.11/lib/sass/script/tree/variable.rb:49:in `_perform'
+/home/scarface/.gem/ruby/gems/sass-3.4.11/lib/sass/script/tree/node.rb:50:in `perform'
+/home/scarface/.gem/ruby/gems/sass-3.4.11/lib/sass/tree/visitors/perform.rb:394:in `visit_prop'
+/home/scarface/.gem/ruby/gems/sass-3.4.11/lib/sass/tree/visitors/base.rb:36:in `visit'
+/home/scarface/.gem/ruby/gems/sass-3.4.11/lib/sass/tree/visitors/perform.rb:158:in `block in visit'
+/home/scarface/.gem/ruby/gems/sass-3.4.11/lib/sass/stack.rb:79:in `block in with_base'
+/home/scarface/.gem/ruby/gems/sass-3.4.11/lib/sass/stack.rb:115:in `with_frame'
+/home/scarface/.gem/ruby/gems/sass-3.4.11/lib/sass/stack.rb:79:in `with_base'
+/home/scarface/.gem/ruby/gems/sass-3.4.11/lib/sass/tree/visitors/perform.rb:158:in `visit'
+/home/scarface/.gem/ruby/gems/sass-3.4.11/lib/sass/tree/visitors/perform.rb:430:in `block (2 levels) in visit_rule'
+/home/scarface/.gem/ruby/gems/sass-3.4.11/lib/sass/tree/visitors/perform.rb:430:in `map'
+/home/scarface/.gem/ruby/gems/sass-3.4.11/lib/sass/tree/visitors/perform.rb:430:in `block in visit_rule'
+/home/scarface/.gem/ruby/gems/sass-3.4.11/lib/sass/tree/visitors/perform.rb:179:in `with_environment'
+/home/scarface/.gem/ruby/gems/sass-3.4.11/lib/sass/tree/visitors/perform.rb:428:in `visit_rule'
+/home/scarface/.gem/ruby/gems/sass-3.4.11/lib/sass/tree/visitors/base.rb:36:in `visit'
+/home/scarface/.gem/ruby/gems/sass-3.4.11/lib/sass/tree/visitors/perform.rb:158:in `block in visit'
+/home/scarface/.gem/ruby/gems/sass-3.4.11/lib/sass/stack.rb:79:in `block in with_base'
+/home/scarface/.gem/ruby/gems/sass-3.4.11/lib/sass/stack.rb:115:in `with_frame'
+/home/scarface/.gem/ruby/gems/sass-3.4.11/lib/sass/stack.rb:79:in `with_base'
+/home/scarface/.gem/ruby/gems/sass-3.4.11/lib/sass/tree/visitors/perform.rb:158:in `visit'
+/home/scarface/.gem/ruby/gems/sass-3.4.11/lib/sass/tree/visitors/base.rb:52:in `block in visit_children'
+/home/scarface/.gem/ruby/gems/sass-3.4.11/lib/sass/tree/visitors/base.rb:52:in `map'
+/home/scarface/.gem/ruby/gems/sass-3.4.11/lib/sass/tree/visitors/base.rb:52:in `visit_children'
+/home/scarface/.gem/ruby/gems/sass-3.4.11/lib/sass/tree/visitors/perform.rb:167:in `block in visit_children'
+/home/scarface/.gem/ruby/gems/sass-3.4.11/lib/sass/tree/visitors/perform.rb:179:in `with_environment'
+/home/scarface/.gem/ruby/gems/sass-3.4.11/lib/sass/tree/visitors/perform.rb:166:in `visit_children'
+/home/scarface/.gem/ruby/gems/sass-3.4.11/lib/sass/tree/visitors/base.rb:36:in `block in visit'
+/home/scarface/.gem/ruby/gems/sass-3.4.11/lib/sass/tree/visitors/perform.rb:186:in `visit_root'
+/home/scarface/.gem/ruby/gems/sass-3.4.11/lib/sass/tree/visitors/base.rb:36:in `visit'
+/home/scarface/.gem/ruby/gems/sass-3.4.11/lib/sass/tree/visitors/perform.rb:157:in `visit'
+/home/scarface/.gem/ruby/gems/sass-3.4.11/lib/sass/tree/visitors/perform.rb:8:in `visit'
+/home/scarface/.gem/ruby/gems/sass-3.4.11/lib/sass/tree/root_node.rb:36:in `css_tree'
+/home/scarface/.gem/ruby/gems/sass-3.4.11/lib/sass/tree/root_node.rb:20:in `render'
+/home/scarface/.gem/ruby/gems/sass-3.4.11/lib/sass/engine.rb:268:in `render'
+/home/scarface/.gem/ruby/gems/compass-import-once-1.0.5/lib/compass/import-once/engine.rb:17:in `block in render'
+/home/scarface/.gem/ruby/gems/compass-import-once-1.0.5/lib/compass/import-once/engine.rb:29:in `with_import_scope'
+/home/scarface/.gem/ruby/gems/compass-import-once-1.0.5/lib/compass/import-once/engine.rb:16:in `render'
+/home/scarface/.gem/ruby/gems/sass-3.4.11/lib/sass/plugin/compiler.rb:492:in `update_stylesheet'
+/home/scarface/.gem/ruby/gems/sass-3.4.11/lib/sass/plugin/compiler.rb:215:in `block in update_stylesheets'
+/home/scarface/.gem/ruby/gems/sass-3.4.11/lib/sass/plugin/compiler.rb:209:in `each'
+/home/scarface/.gem/ruby/gems/sass-3.4.11/lib/sass/plugin/compiler.rb:209:in `update_stylesheets'
+/home/scarface/.gem/ruby/gems/sass-3.4.11/lib/sass/plugin/compiler.rb:470:in `on_file_changed'
+/home/scarface/.gem/ruby/gems/sass-3.4.11/lib/sass/plugin/compiler.rb:328:in `block in watch'
+/usr/local/share/gems/gems/listen-2.8.5/lib/listen/listener.rb:282:in `call'
+/usr/local/share/gems/gems/listen-2.8.5/lib/listen/listener.rb:282:in `_process_changes'
+/usr/local/share/gems/gems/listen-2.8.5/lib/listen/listener.rb:246:in `block in _wait_for_changes'
+/usr/local/share/gems/gems/listen-2.8.5/lib/listen/listener.rb:229:in `loop'
+/usr/local/share/gems/gems/listen-2.8.5/lib/listen/listener.rb:229:in `_wait_for_changes'
+/usr/local/share/gems/gems/listen-2.8.5/lib/listen/listener.rb:318:in `block in _start_wait_thread'
+*/
+body:before {
+  white-space: pre;
+  font-family: monospace;
+  content: "Error: Undefined variable: \"$maxWidth\".\A         on line 8 of /var/www/html/vinconsult/web/vinconsult/sass/layout.scss\A \A 3:   text-align: center;\A 4: }\A 5: \A 6: .content {\A 7:   text-align: left;\A 8:   width: $maxWidth;\A 9: }"; }

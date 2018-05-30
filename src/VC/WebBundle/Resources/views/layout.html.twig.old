@@ -1,0 +1,168 @@
+<!doctype html>
+<html lang="cs">
+<head>
+    <meta charset="utf-8">
+
+    <title>VIN Consult - projektová kancelář</title>
+    <meta name="description" content="The HTML5 Herald">
+    <meta name="author" content="code: Martin Patera">
+    <meta name="robots" content="all,follow" />
+    <meta name="description" content="Inženýrská projektová kancelář se zaměřením na dopravní stavitelství a statiku konstrukcí působí úspěšně na trhu od roku 1993. Společnost je členem firemní skupiny INROS LACKNER se sídlem v severním Německu (Brémy, Rostock)." />
+    <meta name="keywords" content="Vinconsult, projektování, dopravní stavby, statika konstrukcí" />
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,600,700,800&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="{{ asset('vinconsult/stylesheets/screen.css') }}">
+    <link rel="stylesheet" href="{{ asset('lightbox/css/lightbox.css') }}">
+
+    <script type="text/javascript" src="{{ asset('lightbox/js/jquery-1.11.0.min.js') }}"></script>
+    <script type="text/javascript" src="{{ asset('lightbox/js/lightbox.js') }}"></script>
+
+
+
+</head>
+
+<body>
+
+<header class="header">
+    <div class="content">
+        <div class="logo">
+            <a href="{{ path('vc_web_homepage') }}">
+                <img src="{{ asset('images/logo.png') }}" alt="VIN Consult logo"/>
+                <span>Inženýrská projektová kancelář</span>
+            </a>
+        </div>
+        {{ render(controller('VCWebBundle:Default:mainMenu')) }}
+    </div>
+</header>
+{% block slider %}
+
+{% endblock %}
+<main class="page">
+    <div class="content">
+
+        {% block body %}
+        <div class="news hp-box col-lg-4 col-md-6 col-sm-6">
+            <div class="inner">
+                <h2>Aktuality</h2>
+                {% if news %}
+                {% for new in news %}
+                    <div class="item">
+                        <h3><span class="date">{{ new.date|date('m. d. Y') }}</span> | <a href="{{ path('vc_web_news', {id: new.id}) }}">{{ new.title }}</a></h3>
+                        <p>{{ new.annotation|striptags|raw }}</p>
+                    </div>
+                {% endfor %}
+                {% else %}
+                    <p>Žádná novinka zatím nebyla vložena.</p>
+                {% endif %}
+            </div>
+        </div>
+
+        <div class="reference-box hp-box col-lg-4 col-md-6 col-sm-6">
+            <div class="inner">
+                <h2><a href="{{ path('vc_web_references', {categoryUrl: 'pstavby'}) }}">Pozemní stavby</a></h2>
+                <img src="{{ asset('images/pstavby.png')|imagine_filter('hp_image') }}" />
+                <p>Mezi naše hlavní aktivity v oblastiBorro
+                    quas moluptatur autempo rporis inve-
+                    liquati della dis esto quis magnat.</p>
+                <p>Ehenditae porro volloratus, conseque
+                    nonet eum restrum solor mo iur, ut eaque
+                    sus quis doluptur ra postrumqui accabo-
+                    rum recerum, quo temquia voles volupta-
+                    tem nihil is et aut quam, con et.</p>
+                <a href="{{ path('vc_web_references', {categoryUrl: 'pstavby'}) }}" class="more">více</a>
+            </div>
+        </div>
+
+        <div class="reference-box  hp-box col-lg-4 col-md-6 col-sm-6">
+            <div class="inner">
+                <h2><a href="{{ path('vc_web_references', {categoryUrl: 'dstavby'}) }}">Dopravní stavby</a></h2>
+                <img src="{{ asset('images/dstavby.png')|imagine_filter('hp_image') }}" />
+                <p>Udae sitates sunt venimolut molut velia
+                    suntiunt esentur, aut aut oditatur?</p>
+                <p>Everspit peria audi aut harcia di coriasp
+                    ictotaereium seque con natur, nis que et,
+                    nus moluptam qui delloreperum fuga. Ut
+                    magnam ipsunt ipsam res moluptaquam
+                    repta cus, sus etus coreperis quatquiatias
+                    perendi cus eni adicaec erorem ra etur?</p>
+                <a href="{{ path('vc_web_references', {categoryUrl: 'dstavby'}) }}" class="more">více</a>
+            </div>
+        </div>
+
+        <div class="reference-box  hp-box col-lg-4 col-md-6 col-sm-6">
+            <div class="inner">
+                <h2><a href="{{ path('vc_web_references', {categoryUrl: 'mosty'}) }}">Mosty</a></h2>
+                <img src="{{ asset('images/mosty.png')|imagine_filter('hp_image') }}" />
+                <p>d millut doluptia voloreria exceritam a
+                    dolorumquia pro est aligenis autempernat
+                    eniscii sciundunt quisquatem. Et dolorro
+                    corepediae ra voluptas nam soluptam es
+                    esequis sitio con re pla volore plant idel
+                    idelita estecepudae est ea nobitiis imin
+                    nitatemqui volorem poresediam quis sit
+                    dolorpo recaborest, offi cid et occabo.</p>
+                <a href="{{ path('vc_web_references', {categoryUrl: 'mosty'}) }}" class="more">více</a>
+            </div>
+        </div>
+
+
+        <div class="reference-box  hp-box col-lg-4 col-md-6 col-sm-6">
+            <div class="inner">
+                <h2>Know-how a zkušenosti</h2>
+                <img src="{{ asset('images/knowhow.png')|imagine_filter('hp_image') }}" />
+                <ul>
+                    <li>Projekty nosných konstrukcí velkých multifunkčních objektů</li>
+                    <li>Hybridní konstrukce prefa/monolit, spřažené konstrukce</li>
+                    <li>Fyzikální a geometrická nelinearita nosných konstrukcí</li>
+                    <li>Konstrukce ve složitých základových poměrech, smíšené zakládání</li>
+                    <li>Konstrukce v interakci se zemin</li>
+                </ul>
+                <a href="" class="more">více</a>
+            </div>
+        </div>
+
+        <div class="reference-box hp-box col-lg-4 col-md-6  col-sm-6">
+            <div class="inner">
+                <h2>Firemní skupina Inros Lackner</h2>
+                <img src="{{ asset('images/inros-lackner.png')|imagine_filter('hp_image') }}" />
+                <div class="clearfix"></div>
+                <p>
+                    <img src="{{ asset('images/hp-mapa.png') }}" class="hp-mapa" />
+                    Mateřská společnost INROS LACKNER
+                    AG působí ve Spolkové republice Německo prostřednictvím 11 poboček, sídlo
+                    společnosti je v severním Německu (Brémy, Rostock). V mezinárodním měřítku je
+                    společnost především v Africe, východní
+                    Asii a Rusku. Skupina zaměstnává v
+                    současné době přibližně 300 inženýrů a
+                    zajišťuje komplexní škálu projektových,
+                    inženýrských a konzultačních činností.
+                </p>
+                <a href="" class="more">více</a>
+            </div>
+        </div>
+        {% endblock %}
+
+    </div>
+    <div class="clearfix"></div>
+</main>
+<footer class="footer">
+    <div class="content">
+        <h2 class="title">Vin Consult - inženýrská projektová kancelář</h2>
+        <h2>Kontakt</h2>
+        <div class="clearfix"></div>
+        <div>
+            VIN Consult s.r.o.<br/>
+            Jeremenkova 763/88<br/>
+            140 00, Praha 4
+        </div>
+        <div>
+            Telefon: (+420) 244 104 010<br/>
+            E-mail: vin@vinconsult.cze
+        </div>
+        <div class="clearfix"></div>
+    </div>
+</footer>
+
+</body>
+</html>

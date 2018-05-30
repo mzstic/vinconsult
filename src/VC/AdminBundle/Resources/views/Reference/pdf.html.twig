@@ -1,0 +1,46 @@
+<html>
+<head>
+    <meta charset="utf-8">
+    <style type="text/css">
+        td {
+            border-bottom: solid 1px black;
+            border-collapse: collapse;
+        }
+        table {
+            border-collapse: collapse;
+        }
+        .logo {
+            width: 125px;
+            margin-bottom: 10px;
+        }
+
+    </style>
+</head>
+<body style="font-family: Arial; font-size: 10px;">
+            <img src="{{ asset('images/logo.png') }}" class="logo"/>
+
+            <table class="table table-striped table-bordered table-hover">
+                <thead>
+                <tr>
+                    <th>Stavba</th>
+                    <th>Realizace</th>
+                    <th>Výkony</th>
+                    <th>Klient</th>
+                    <th>Investor</th>
+                </tr>
+                </thead>
+                <tbody>
+                {% for reference in references %}
+                    <tr {% if reference.important %}class="success"{% endif %}>
+                        <td>{{ reference.building }}</td>
+                        <td>{{ reference.realization }}</td>
+                        <td>{{ reference.performances }}</td>
+                        <td>{{ reference.client }}</td>
+                        <td>{{ reference.investor }}</td>
+                    </tr>
+                {% endfor %}
+                </tbody>
+            </table>
+
+</body>
+</html>

@@ -1,0 +1,22 @@
+{% extends 'VCAdminBundle::layout.html.twig' %}
+
+{% block content %}
+
+    <div class="row">
+        <h2>
+            <a href="{{ path('vc_admin_news_edit', {newsId: new.id}) }}">Uprava aktuality</a> -
+            <a href="{{ path('vc_admin_news_photos', {newsId: new.id}) }}">Upravit fotky</a> -
+            <a href="{{ path('vc_admin_news_upload', {newsId: new.id}) }}">Nahrát fotky</a>
+        </h2>
+    </div>
+
+    <div class="row">
+        <div class="panel panel-default">
+            <div class="panel-body">
+                <form id="photo-upload" class="dropzone" action="{{ path('vc_admin_news_upload', {newsId: new.id}) }}">
+                </form>
+            </div>
+        </div>
+    </div>
+
+{% endblock %}

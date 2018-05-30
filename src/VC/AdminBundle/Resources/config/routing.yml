@@ -1,0 +1,99 @@
+
+
+
+
+vc_admin_homepage:
+    path:     /
+    defaults: { _controller: VCAdminBundle:Default:index }
+vc_admin_home_boxes:
+    path:     /hlavni-stranka/
+    defaults: { _controller: VCAdminBundle:Default:list }
+vc_admin_home_boxes_edit:
+    path:     /hlavni-stranka/edit/{id}
+    defaults: { _controller: VCAdminBundle:Default:edit, id: 0 }
+
+vc_admin_reference_list:
+    path:     /reference/
+    defaults: { _controller: VCAdminBundle:Reference:list }
+
+vc_admin_reference_import:
+    path:     /reference/import/
+    defaults: { _controller: VCAdminBundle:Reference:import }
+
+vc_admin_reference_export_list:
+    path:     /reference/export/
+    defaults: { _controller: VCAdminBundle:Reference:exportList }
+
+vc_admin_reference_export:
+    path:     /reference/exportovat/
+    defaults: { _controller: VCAdminBundle:Reference:export }
+
+vc_admin_reference_edit:
+    path:     /reference/edit/{referenceId}
+    defaults: { _controller: VCAdminBundle:Reference:edit }
+
+vc_admin_reference_photos:
+    path:     /reference/photos/{referenceId}
+    defaults: { _controller: VCAdminBundle:Reference:photos }
+
+vc_admin_reference_upload:
+    path:     /reference/upload/{referenceId}
+    defaults: { _controller: VCAdminBundle:Reference:upload }
+vc_admin_reference_pdf:
+    path:     /reference/pdf/
+    defaults: { _controller: VCAdminBundle:Reference:pdf }
+    
+
+vc_admin_project_list:
+    path:     /project/
+    defaults: { _controller: VCAdminBundle:Project:list }
+
+vc_admin_project_edit:
+    path:     /project/edit/{referenceId}
+    defaults: { _controller: VCAdminBundle:Project:edit }
+
+vc_admin_project_photos:
+    path:     /project/photos/{referenceId}
+    defaults: { _controller: VCAdminBundle:Project:photos }
+
+vc_admin_project_upload:
+    path:     /project/upload/{referenceId}
+    defaults: { _controller: VCAdminBundle:Project:upload }
+
+
+
+vc_admin_static_text_list:
+    path:     /text/
+    defaults: { _controller: VCAdminBundle:StaticText:admin }
+
+vc_admin_static_text_edit:
+    path:     /text/edit/{id}
+    defaults: { _controller: VCAdminBundle:StaticText:edit, id: 0 }
+vc_admin_static_text_photos:
+    path:     /text/photos/{id}
+    defaults: { _controller: VCAdminBundle:StaticText:photos }
+vc_admin_static_text_upload:
+    path:     /text/upload/{id}
+    defaults: { _controller: VCAdminBundle:StaticText:upload }
+
+vc_admin_mainmenu_list:
+    path:     /menu/
+    defaults: { _controller: VCAdminBundle:MainMenu:list }
+
+vc_admin_mainmenu_edit:
+    path:     /menu/edit/{id}
+    defaults: { _controller: VCAdminBundle:MainMenu:edit }
+
+
+vc_admin_news_list:
+    path:     /novinky/
+    defaults: { _controller: VCAdminBundle:News:list}
+vc_admin_news_edit:
+    path:     /novinky/edit/{id}
+    defaults: { _controller: VCAdminBundle:News:edit, id: 0}
+vc_admin_news_photos:
+    path:     /novinky/photos/{newsId}
+    defaults: { _controller: VCAdminBundle:News:photos }
+vc_admin_news_upload:
+    path:     /novinky/upload/{newsId}
+    defaults: { _controller: VCAdminBundle:News:upload }

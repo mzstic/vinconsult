@@ -1,0 +1,22 @@
+{% extends 'VCAdminBundle::layout.html.twig' %}
+
+{% block content %}
+
+    <div class="row">
+        <h2>
+            <a href="{{ path('vc_admin_project_edit', {referenceId: reference.id}) }}">Editace</a> -
+            <a href="{{ path('vc_admin_project_photos', {referenceId: reference.id}) }}">Upravit fotky</a> -
+            <a href="{{ path('vc_admin_project_upload', {referenceId: reference.id}) }}">Nahrát fotky</a>
+        </h2>
+    </div>
+
+    <div class="row">
+        <div class="panel panel-default">
+            <div class="panel-body">
+                <form id="photo-upload" class="dropzone" action="{{ path('vc_admin_reference_upload', {referenceId: reference.id}) }}">
+                </form>
+            </div>
+        </div>
+    </div>
+
+{% endblock %}

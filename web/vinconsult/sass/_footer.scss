@@ -1,0 +1,44 @@
+.footer{
+  padding-bottom: 5em;
+  margin-top: 6em;
+  border-top: solid 1em #337ab7;
+  background: $cGrey;
+  color: $cWhite;
+  font-family: 'Open Sans', sans-serif;
+}
+.footer h2 {
+  color: $cGrey;
+  font-size: 1.375em;
+  margin-bottom: 1em;
+  margin-top: 1em;
+  font-weight: $weightExtraBold;
+}
+.footer .content div {
+  float: left;
+  margin-right: 5em;
+  line-height: 1.25em;
+}
+.footer .content {
+  padding-left: 1em;
+  position: relative;
+  padding-right: 1em;
+}
+.footer .title {
+  position: absolute;
+  top: -4em;
+  right: 1em;
+  color: $cGrey;
+  font-weight: $weightNormal;
+}
+.footer-small {
+  background: $cGrey;
+  color: $cWhite;
+  bottom: 0;
+  line-height: 1.3em;
+  padding: .25em;
+  font-size: 1.2em;
+  //&.fixed {
+    position: absolute;
+    bottom: 0;
+  //}
+}

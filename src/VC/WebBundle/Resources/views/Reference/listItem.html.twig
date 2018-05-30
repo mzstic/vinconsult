@@ -1,0 +1,17 @@
+{% set mainPhoto = reference.photos.get(0) %}
+
+<div class="reference-list-item col-lg-4 col-md-4 col-sm-6">
+<div class="inner">
+    <a href="{{ path('vc_web_reference', {referenceId: reference.id}) }}">
+    {% if mainPhoto %}
+        <img width="100%" src="{{ mainPhoto.webPath|imagine_filter('reference_thumb') }}" alt="" title="" />
+    {% else %}
+        <img width="100%" src="{{ 'images/noimage.png'|imagine_filter('reference_thumb') }}" alt="" title="" />
+    {% endif %}
+    <div class="info">
+        <h3>{{ reference.building }}</h3>
+        <p>{{ reference.city }}, {{ reference.country }}</p>
+    </div>
+    </a>
+</div>
+</div>

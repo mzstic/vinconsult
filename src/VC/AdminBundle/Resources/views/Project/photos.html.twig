@@ -1,0 +1,39 @@
+{% extends 'VCAdminBundle::layout.html.twig' %}
+
+{% block content %}
+
+    <div class="row">
+        <h2>
+            <a href="{{ path('vc_admin_project_edit', {referenceId: reference.id}) }}">Editace</a> -
+            <a href="{{ path('vc_admin_project_photos', {referenceId: reference.id}) }}">Upravit fotky</a> -
+            <a href="{{ path('vc_admin_project_upload', {referenceId: reference.id}) }}">Nahrát fotky</a>
+        </h2>
+    </div>
+
+    <div class="row">
+        <div class="panel panel-default">
+            <div class="panel-body">
+                {{ form_start(form) }}
+                {{ form_row(form.savePhotos) }}
+
+
+
+                <div id="sortable">
+                {% for photo in reference.photos %}
+                    <div class="panel panel-yellow photo" style="margin-right: 1em; cursor: move;" data-id="{{ photo.id }}">
+                        <div class="panel-body" >
+                            <img width="133" height="100" src="{{ asset(photo.thumbWebPath) }}" />
+                            {{ form_widget(form.children['photo'~photo.id]) }}
+                            <button title="odstranit fotku" type="button" style="float:right;" class="btn-remove btn btn-danger btn-circle btn-lg"><i class="fa fa-trash"></i>
+                            </button>
+                        </div>
+                    </div>
+                {% endfor %}
+
+                </div>
+                {{ form_end(form) }}
+            </div>
+        </div>
+    </div>
+
+{% endblock %}

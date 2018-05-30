@@ -1,0 +1,50 @@
+vc_web_homepage:
+    path:     /
+    defaults: { _controller: VCWebBundle:Default:index }
+
+vc_web_references_2:
+    path:     /projekty/
+    defaults: { _controller: VCWebBundle:Reference:list, categoryUrl: null }
+
+vc_web_references:
+    path:     /projekty/{categoryUrl}
+    defaults: { _controller: VCWebBundle:Reference:list, categoryUrl: null }
+
+
+
+vc_web_reference:
+    path:     /detail-reference/{referenceId}
+    defaults: { _controller: VCWebBundle:Reference:detail }
+
+vc_web_career:
+    path:     /zamestnani/
+    defaults: { _controller: VCWebBundle:Default:career }
+
+
+vc_web_page:
+    path:     /stranka/{url}
+    defaults: { _controller: VCWebBundle:Default:page }
+
+vc_web_contact:
+    path:     /kontakt/
+    defaults: { _controller: VCWebBundle:Default:contact }
+
+vc_web_about_us:
+    path:     /o-nas/
+    defaults: { _controller: VCWebBundle:Default:aboutUs }
+
+vc_web_history:
+    path:     /historie-spolecnosti/
+    defaults: { _controller: VCWebBundle:Default:history }
+
+vc_web_bim:
+  path:       /bim/
+  defaults:   { _controller: VCWebBundle:Default:bim }
+
+vc_web_news_list:
+  path:       /novinky/
+  defaults:   { _controller: VCWebBundle:News:list }
+
+vc_web_news:
+    path:     /novinka/{id}
+    defaults: { _controller: VCWebBundle:News:detail }

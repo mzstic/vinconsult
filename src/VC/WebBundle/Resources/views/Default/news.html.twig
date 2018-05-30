@@ -1,0 +1,33 @@
+{% extends '@VCWeb/layout.html.twig' %}
+
+{% block body %}
+    <div class="row">
+        <div class="col-sm-4">
+            {% if not new.photos is empty %}
+                <div class="col-sm-12">
+                    <a href="{{ asset(new.photos.get(0).webPath) }}" data-lightbox="photos">
+                        <img src="{{ asset(new.photos.get(0).webPath) }}" width="100%"/>
+                    </a>
+                </div>
+            {% endif %}
+            {% for photo in new.photos %}
+                {% if not loop.first %}
+                    <div class="col-sm-4 col-md-4 photo">
+                        <a href="{{ asset(photo.webPath) }}" data-lightbox="photos">
+                            <img src="{{ photo.webPath|imagine_filter('reference_thumb') }}" width="100%" />
+                        </a>
+                    </div>
+                    {% if loop.index0 % 3 == 0 %}<div class="clearfix"></div>{% endif %}
+                {% endif %}
+
+            {% endfor %}
+        </div>
+        <div class="col-sm-8">
+            <div class="text">
+                <h2>{{ new.title }}</h2>
+                <p><strong>Datum: </strong> {{ new.date|date('m. d. Y') }}</p>
+                {{ new.text|raw }}
+            </div>
+        </div>
+    </div>
+{% endblock %}

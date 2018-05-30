@@ -1,0 +1,41 @@
+{% extends 'VCAdminBundle::layout.html.twig' %}
+
+{% block content %}
+    <div class="row">
+        <div class="col-md-8 col-lg-6">
+        <h2>Hlavní menu</h2>
+
+        <p>
+            Zde je možné editovat položky v hlavním menu. Je potřeba, aby URL bylo nastavené na nějakou z položek v sekci stránky.
+            Pokud identifikátoru žádná stránka nebude odpovídat, odkaz nebude fungovat.<br/>
+            <strong>Po úpravě doporučuji vyzkoušet.</strong>
+
+        </p>
+
+        <table class="table table-striped table-bordered table-hover">
+            <thead>
+            <tr>
+                <th>ID</th>
+                <th>Název</th>
+                <th>URL</th>
+                <th>&nbsp;</th>
+            </tr>
+            </thead>
+            <tbody>
+            {% for item in menuItems %}
+                <tr>
+                    <td>{{ item.id }}</td>
+                    <td>{{ item.title }}</td>
+                    <td>{{ item.URL }}</td>
+                    <td>
+                        <a href="{{ path('vc_admin_mainmenu_edit', {id: item.id}) }}" class="btn btn-info btn-circle" title="Upravit"><i class="fa fa-pencil"></i></a>
+                    </td>
+                </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+        </div>
+    </div>
+
+
+{% endblock %}

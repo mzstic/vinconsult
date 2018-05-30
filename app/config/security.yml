@@ -1,0 +1,30 @@
+security:
+    encoders:
+        VC\AdminBundle\Entity\User:
+            algorithm: bcrypt
+            cost: 12
+
+
+    providers:
+        admin_area:
+            entity: { class: VCAdminBundle:User, property: username }
+
+    firewalls:
+        dev:
+            pattern: ^/(_(profiler|wdt|error)|css|images|js|fonts)/
+            security: false
+
+        admin_area:
+            pattern: ^/administrace
+            logout:
+                path:   /administrace/logout
+                target: /administrace
+            form_login:
+                login_path: /login
+                check_path: /administrace/login_check
+
+        default:
+            anonymous: ~
+
+    access_control:
+        - { path: ^/administrace/login, roles: IS_AUTHENTICATED_ANONYMOUSLY }

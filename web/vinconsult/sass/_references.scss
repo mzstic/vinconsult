@@ -1,0 +1,177 @@
+.projects-select {
+  float: left;
+  font-size: .65em;
+  margin-top: .7em;
+  position: relative;
+  margin-right: .5em;
+  transition: 1s;
+
+  &.closed {
+    .list {
+      display: none;
+    }
+    .fa-chevron-up {
+      display: none;
+    }
+  }
+  &.opened {
+    .list {
+      display: block;
+    }
+    .fa-chevron-down {
+      display: none;
+    }
+  }
+  span.button {
+    cursor: pointer;
+  }
+  .list {
+    background: rgba(255,255,255, .8);
+    position: absolute;
+    z-index: 10;
+    left: -.75em;
+    transition: 1s;
+    a {
+      display: block;
+      font-size: .8em;
+      padding: 0 1em 0 1em;
+      min-width: 9em;
+    }
+  }
+}
+
+.project-settings {
+  float: right;
+  font-size: .65em;
+  margin-top: .7em;
+}
+
+
+
+
+.references {
+  padding-top: 0;
+  color: #000;
+}
+
+.references h2 {
+  font-weight: $weightBold;
+  font-size: 2.5em;
+  line-height: initial;
+  margin-bottom: 1em;
+  @media screen and (max-width: 768px) {
+    margin-bottom: 0;
+  }
+
+}
+.references h2 a.projects-title {
+  color: #000;
+  float: left;
+  margin-right: 1em;
+}
+
+.references select {
+  margin-top: 2em;
+  @media screen and (max-width: 768px) {
+    margin-top: 0;
+    margin-bottom: .5em;
+  }
+}
+
+.references ul {
+  float: left;
+}
+
+.references li {
+  float: left;
+  padding: 1.5em 0 1em 0;
+}
+.references li a {
+  font-size: 1.5em;
+  color: $cGrey;
+  font-weight: $weightBold;
+  padding: 0 1em;
+}
+
+.references li a:hover {
+  color: $cGrey;
+}
+
+.reference-list-item {
+  margin-bottom: 1em;
+  position: relative;
+  padding: 0 1em;
+  a {
+    color: #000;
+  }
+}
+.references .delimiter {
+  float: left;
+  width: 3px;
+  height: 1em;
+  background: $cGrey;
+  margin-top: 1.75em;
+}
+
+.reference-list-item .info {
+  bottom: .25em;
+  padding: .5em;
+  width: 100%;
+}
+.reference-list-item .inner {
+  position: relative;
+}
+.reference-list-item h3 {
+  font-weight: $weightBold;
+  font-family: 'Proxima Nova Rg', Georgia, sans-serif;
+  font-size: 1.25em;
+  margin: 0;
+}
+
+.reference .gallery {
+  margin-top: 0;
+}
+
+.reference .gallery img {
+  width: 100%;
+}
+
+.reference strong {
+  font-weight: $weightBold;
+  font-family: 'Proxima Nova Rg', Georgia, sans-serif;
+}
+.reference h2 {
+  font-weight: $weightBold;
+  font-family: 'Proxima Nova Rg', Georgia, sans-serif;
+  font-size: 2em;
+  margin: 1em 0;
+}
+.reference p {
+  font-size: 1.6em;
+}
+
+.reference h3{
+  font-weight: $weightBold;
+  font-family: 'Proxima Nova Rg', Georgia, sans-serif;
+  margin: 0 0 1em 0;
+}
+.reference .photo-ref {
+  padding-top: 1em;
+}
+
+.references table {
+  width: 100%;
+}
+.references th {
+  font-weight: $weightBold;
+  font-family: 'Proxima Nova Rg', Georgia, sans-serif;
+  border-bottom: solid 2px $cGrey;
+  padding: .25em .5em;
+}
+.references td {
+  border-bottom: solid 1px $cGrey;
+  padding: .25em .5em;
+}
+.references .even td {
+  background: #efefef;
+}

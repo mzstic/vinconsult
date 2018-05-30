@@ -1,0 +1,108 @@
+{% extends '@VCWeb/layout.html.twig' %}
+
+{% block body %}
+    <div class="content">
+        <div class="cover-photo">
+            <div class="photo" style="background-image: url('{{ asset('contact/OC_Vankovka_Brno_5.jpg') }}');">
+                <div class="h2">
+                    <h2>
+                        <span class="main">O nás</span><br/>
+                        <span class="sub">VIN Consult s.r.o.</span>
+                    </h2>
+                </div>
+            </div>
+        </div>
+        <div class="text down">
+
+            <h2>O nás</h2>
+            <p>Jsme nezávislá projektová kancelář a navrhujeme konstrukce a stavby již téměř 25 let. Oddělení konstrukční statiky zpracovává návrhy všech druhů nosných konstrukcí a mostů, oddělené dopravních staveb zajišťuje komplexní projekty dopravní infrastruktury.</p>
+            <p>Našim cílem je návrh inovativních a zároveň jednoduchých a úsporných řešení, které splňují Vaše nejnáročnější představy, a zároveň efektivně využívají Vaše finanční prostředky.</p>
+            <p>Složité problémy nás neděsí, ale přitahují.</p>
+
+            <h3>Konstrukce a mosty</h3>
+            <ul>
+                <li>Nosné konstrukce budov, mostů a inženýrské objektů</li>
+                <li>Základové konstrukce, stavební jámy, konstrukce v interakci se zeminou</li>
+                <li>Speciální výpočty, fyzikální a geometrická nelinearita, stabilitní problémy</li>
+            </ul>
+
+            <h3>Dopravní stavby</h3>
+            <ul>
+                <li>Dopravní stavby v extravilánu i městském prostředí</li>
+                <li>Kapacitní výpočty, návrhy křižovatek</li>
+                <li>Generální projektantství, koordinace a projekty venkovních inženýrských sítí</li>
+            </ul>
+
+            <p>Společnost byla založena v roce 1993 s majetkovou účastí firemní skupiny Inros Lackner.</p>
+            <p>V roce 1999 byl zaveden systém řízení jakosti dle ČSN ISO 9001, firma je pojištěna na profesní odpovědnost z výkonu činnosti pro ČR a SRN.</p>
+            <p>Naše projekty jsou dlouhodobě zpracovávány technologií BIM.</p>
+
+            <h3><a href="{{ path("vc_web_history") }}"><span>Historie společnosti<span style="top: 4px; position: relative; display: inline-block; left: 10px;" class="fa fa-external-link"></span></span></a></h3>
+
+            <h3><a href="{{ path("vc_web_bim") }}"><span>BIM<span style="top: 4px; position: relative; display: inline-block; left: 10px;" class="fa fa-external-link"></span></span></a></h3>
+
+            <h3>Vedení společnosti</h3>
+
+            <p>Vedení společnosti tvoří zkušení inženýři s  dlouhodobou praxí. Všichni vedoucí pracovníci včetně ředitele společnosti se osobně podílejí na řízení a zpracování projektů a tímto si trvale udržují bezprostřední kontakt s odbornou problematikou i technologií projektování.</p>
+
+            <div class="row vedeni-row">
+                <div class="col-md-4 col-sm-6 col-xs-6 vedeni">
+                    <img src="{{ asset('contact/01_Vancik.jpg') }}">
+                    <h4>Ing. Vladimír Vančík, CSc.</h4>
+                    <span>
+                        Ředitel společnosti<br/>
+                        AI pro mosty a inženýrské konstrukce<br/>
+                        Oprávnění pro navrhování nosných konstrukcí v SRN
+                    </span>
+                </div>
+
+                <div class="col-md-4 col-sm-6 col-xs-6 vedeni">
+                    <img src="{{ asset('contact/02_Kormanak.jpg') }}">
+                    <h4>Ing. Pavel Kormaňák</h4>
+                    <span>
+                        Vedoucí oddělení mostů a inženýrských staveb<br/>
+                        Autorizovaný inženýr pro mosty a inž. konstrukce
+                    </span>
+                </div>
+                <div class="clearfix visible-sm-block"></div>
+                <div class="clearfix visible-xs-block"></div>
+
+
+
+                <div class="col-md-4 col-sm-6 col-xs-6 vedeni">
+                    <img src="{{ asset('contact/04_Svoboda.jpg') }}">
+                    <h4>Ing. Michal Svoboda</h4>
+                    <span>Vedoucí oddělení statiky konstrukcí</span>
+                </div>
+
+                <div class="clearfix visible-md-block"></div>
+                <div class="clearfix visible-lg-block"></div>
+
+                <div class="col-md-4 col-md-offset-4 col-sm-6 col-xs-6 vedeni">
+                    <img src="{{ asset('contact/03_Hradil.jpg') }}">
+                    <h4>Ing. Jan Hradil, PhD.</h4>
+                    <span>
+                        Vedoucí oddělení dopravních staveb<br/>
+                        Autorizovaný inženýr pro dopravní stavby<br/>
+                        Soudní znalec pro dopravní stavby
+                    </span>
+                </div>
+            </div>
+
+            <h3>Firemní skupina</h3>
+
+            <p>Firemní skupina INROS-LACKNER vznikla spojením dvou větších inženýrských firem Prof. Dr. Lackner a Partner GmbH se sídlem v Brémách (založena 1936) a INROS Planungsgesellschaft mbH se sídlem v Rostocku (založena 1950), spolu s řadou menších projektových kanceláří v Německu. Společnost Lackner a Partner byla vysoce kvalifikovaná kancelář s úzkou specializací na projekty přístavů a vodních staveb, pod dlouholetým vedením světově známého odborníka na přístavní inženýrství Prof. Lacknera (m.j. dlouholetý předseda pracovní skupiny „Ufereinfassungen“) se podílela na řadě velkých projektů na celém světě. Společnost Inros byla naopak komplexně založená multidisciplinární projektová firma s aktivitami v severním Německu, usilující o rozšíření působnosti v evropském a světovém měřítku.</p>
+            <p>S nástupem velkých projektů bylo nutno firemní strukturu zjednodušit a zprůhlednit, proto byla firemní skupina v roce 2001 transformována do akciové společnosti Inros Lackner SE s regionálními pobočkami po celém Německu a mezinárodními pobočkami v  Bělorusku, Vietnamu, Kambodži a Togu. Velké mezinárodní projekty jsou dále řízeny prostřednictvím zastoupení v mnoha zemích Asie a Afriky. Společnost zaměstnává téměř 400 inženýrů a zajišťuje komplexní škálu projektových, inženýrských a konzultačních činností.</p>
+            <ul>
+                <li>Architektura, urbanismus a územní plánování</li>
+                <li>Komplexní projekty budov s důrazem na spotřebu energie</li>
+                <li>Komplexní projekty dopravní infrastruktury, projekty mostů a inženýrských konstrukcí</li>
+                <li>Regionální a nadregionální dopravní průzkumy a plánování</li>
+                <li>Projekty námořních a vnitrozemských přístavů</li>
+                <li>Trajektové terminály, vnitrozemské vodní cesty, zdymadla</li>
+                <li>Protipovodňová ochrana, protierozní ochrana pobřeží</li>
+                <li>Energetické projekty a ekologické analýzy, trvale udržitelný rozvoj</li>
+            </ul>
+        </div>
+    </div>
+{% endblock %}

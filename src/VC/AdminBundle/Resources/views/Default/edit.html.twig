@@ -1,0 +1,27 @@
+{% extends 'VCAdminBundle::layout.html.twig' %}
+
+{% block title %}
+
+{% endblock %}
+
+
+{%  block content %}
+
+    <div class="row">
+        {% if box.id == 0 %}
+            <h2>Hlavní strana - nový box</h2>
+        {% else %}
+            <h2>Hlavní strana - editace boxu</h2>
+        {% endif %}
+        <p>
+            <strong>Nadpis</strong> - hlavní nadpis<br>
+            <strong>Podpnadpis</strong> - podnadpis<br>
+            <strong>Fotka</strong> - fotka. Pokud nebude žádná vybrána, zústane stávající.<br>
+        </p>
+        {% if box.photoPath %}
+            <strong>Aktuální fotka:</strong><br/>
+            <img src="{{ box.photoWebPath|imagine_filter('reference_thumb') }}"><br/><br/>
+        {% endif %}
+        {{ form(form) }}
+    </div>
+{% endblock %}

@@ -1,0 +1,45 @@
+{% extends '@VCWeb/layout.html.twig' %}
+
+{% block body %}
+
+    <div class="content">
+        <div class="cover-photo">
+            <div class="photo" style="background-image: url('{{ asset('contact/Hamburg1.jpg') }}');">
+
+                <div class="h2">
+                    <h2>
+                        <span class="main">Zaměstnání</span><br/>
+                        <span class="sub">Hledáme nápady a myšlenky</span>
+                    </h2>
+                </div>
+            </div>
+        </div>
+
+        <div class="text down">
+
+            <h2>Zaměstnání</h2>
+            <p>Hledáme kreativní spolupracovníky, které neuspokojuje rutinní práce. Pokud máte zájem o navrhování staveb a baví Vás vymýšlet nové postupy, můžete se podílet na práci v menším přátelském kolektivu na různorodých domácích i mezinárodních projektech. Naší ambicí je odstranit rutinu projektování a tímto získat čas pro kreativní navrhování zajímavých konstrukcí a staveb.</p>
+            <h3>Volná místa</h3>
+            <ul>
+                <li>Projektant konstrukcí a mostů</li>
+                <li>Projektant silničních staveb</li>
+                <li>Konstruktér pro železobetonové konstrukce (Revit, Allplan)</li>
+            </ul>
+            <p>Máme zájem jak o inženýry s autorizací, tak o absolventy nebo studenty vyšších ročníků stavebních fakult se zaměřením na konstrukce nebo dopravní stavby.</p>
+            <p>Písemné nabídky se životopisem zasílejte poštou nebo elektronickou poštou.</p>
+
+            <p>
+                Kateřina Studentová<br/>
+                <a href="mailto: katerina.studentova@vinconsult.cz">katerina.studentova@vinconsult.cz</a><br/>
+
+            </p>
+            <div class="row vedeni-row">
+                <div class="col-md-4 col-sm-6 col-xs-12 vedeni career">
+                    <img src="{{ asset('contact/05_Studentova.jpg') }}" alt="Kateřina Studentová" title="Kateřina Studentová" />
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+{% endblock %}

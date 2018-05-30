@@ -1,0 +1,8 @@
+.photo input[type="text"]{
+    width: 70%;
+    margin-left: 1em;
+    float: left;
+}
+.photo img {
+    float: left;
+}

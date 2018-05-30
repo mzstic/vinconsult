@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="cs">
+<head>
+    <meta charset="utf-8">
+
+    <title>VIN Consult - projektová kancelář</title>
+    <meta name="description" content="The HTML5 Herald">
+    <meta name="author" content="code: Martin Patera">
+    <meta name="robots" content="all,follow" />
+    <meta name="description" content="Inženýrská projektová kancelář se zaměřením na dopravní stavitelství a statiku konstrukcí působí úspěšně na trhu od roku 1993. Společnost je členem firemní skupiny INROS LACKNER se sídlem v severním Německu (Brémy, Rostock)." />
+    <meta name="keywords" content="Vinconsult, projektování, dopravní stavby, statika konstrukcí" />
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,600,700,800&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="{{ asset('vinconsult/stylesheets/screen.css') }}">
+    <link rel="stylesheet" href="{{ asset('lightbox/css/lightbox.css') }}">
+
+    <script type="text/javascript" src="{{ asset('js/bundle.js') }}"></script>
+</head>
+
+<body id="homepage">
+
+<header class="header header--top">
+    <div class="logo">
+        <a href="{{ path('vc_web_homepage') }}">
+            <img src="{{ asset('images/vinconsult-logo-w.png') }}" alt="VIN Consult logo" class="logo-w"/>
+            <img src="{{ asset('images/vinconsult-logo-b.png') }}" alt="VIN Consult logo" class="logo-b"/>
+            <span>Inženýrská projektová kancelář</span>
+        </a>
+    </div>
+    <div class="toggle-menu toggle-menu--closed">
+        <span class="fa fa-close"></span>
+        <span class="fa fa-navicon"></span>
+    </div>
+    {{ render(controller('VCWebBundle:Default:mainMenu')) }}
+</header>
+
+
+{% block slider %}
+{% endblock %}
+<main class="page">
+    {% block body %}
+    {% endblock %}
+    <div class="clearfix"></div>
+</main>
+<footer class="footer-small fixed">
+    VIN Consult s. r. o., Jeremenkova 763/88, 140 00 Praha 4, Czech Republic, Tel.: (+420) 244 104 010, E-mail: vin@vinconsult.cz
+</footer>
+
+</body>
+</html>

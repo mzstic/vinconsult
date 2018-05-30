@@ -1,0 +1,69 @@
+.hp-box h2 {
+  color: $cGrey;
+  font-size: 1.375em;
+  margin-bottom: 1em;
+  font-weight: $weightBold;
+  margin-top: 2em;
+}
+
+.hp-box {
+
+
+  .inner {
+    border-bottom: .25em solid $cGrey;
+    padding-bottom: .5em;
+    height: 30em;
+    margin-top: 1em;
+    position: relative;
+  }
+
+  .more {
+    display: block;
+    position: absolute;
+    color: $cWhite;
+    font-weight: $weightBold;
+    background: $cGrey;
+    bottom: .5em;
+    right: 0em;
+    padding: .25em .5em;
+    text-decoration: none;
+  }
+  p {
+    margin: 1em 0;
+    text-align: justify;
+  }
+
+  ul {
+    margin: 1em 0;
+  }
+  li {
+    margin-left: 1.5em;
+    text-indent: -1em;
+    margin-bottom: .5em;
+  }
+
+  li:before {
+    content: "■ ";
+    color: $cGrey;
+  }
+}
+
+.news p {
+  border-bottom: solid 1px $cGrey;
+  padding-bottom: .5em;
+  margin-top: .25em;
+}
+
+.news h3 a {
+  color: $cGrey;
+  font-weight: $weightBold;
+}
+
+.reference-box img{
+  width: 100%;
+}
+.reference-box img.hp-mapa {
+  float: right;
+  width: 48%;
+  margin-left: 1em;
+}

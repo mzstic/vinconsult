@@ -1,0 +1,18 @@
+{% extends 'VCAdminBundle::layout.html.twig' %}
+
+{% block content %}
+    <div class="row">
+        <h2>Import referencí</h2>
+        <p>
+            Zde je možné nahrát aktuální .csv soubor s referencemi.<br>
+            Při nahrání nového souboru budou podle ID
+        </p>
+        <ul>
+            <li>existující reference aktualizovány (fotky zůstanou nahrané)</li>
+            <li>neexistující vytvořeny (bez fotek)</li>
+            <li>a reference co nejsou v .csv souboru ze serveru smazány</li>
+        </ul>
+        {{ form(form) }}
+    </div>
+
+{% endblock %}

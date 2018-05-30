@@ -1,0 +1,159 @@
+{% extends '@VCWeb/layout.html.twig' %}
+
+{% block body %}
+    <div class="content-wide">
+        <div class="references">
+            <div class="col-xs-12">
+                <h2>
+                    <a href="{{ path('vc_web_references_2') }}" class="projects-title">Projekty</a>
+                    <div style="float: right;">
+                    <div class="projects-select closed">
+                        <span class="button">
+                            {% if selectedCategoryUrl == null %}
+                                <span>Kategorie <i class="fa fa-chevron-down"></i><i class="fa fa-chevron-up"></i></span>
+                            {% else %}
+                                {% for category in categories %}
+                                    {% if category.url == selectedCategoryUrl %}
+                                        <span>{{ category.title }} <i class="fa fa-chevron-down"></i><i class="fa fa-chevron-up"></i></span>
+                                    {% endif %}
+                                {% endfor %}
+                            {% endif %}
+                        </span>
+
+                        <div class="list">
+                            <a href="{{ path('vc_web_references_2', {year: selectedYear, country: selectedCountry }) }}">Vše</a>
+                            {% for category in categories %}
+                                {% if category.title != 'Posudky' %}
+                                    <a href="{{ path('vc_web_references', {categoryUrl: category.url, year: selectedYear, country: selectedCountry }) }}">
+                                        {{ category.title }}
+                                    </a>
+                                {% endif %}
+                            {% endfor %}
+                        </div>
+
+                    </div>
+
+                    <div class="projects-select closed">
+                        <span class="button">
+                            {% if selectedCountry == null %}
+                                <span>Země <i class="fa fa-chevron-down"></i><i class="fa fa-chevron-up"></i></span>
+                            {% else %}
+                                {% for country in countries%}
+                                    {% if country.country == selectedCountry %}
+                                        <span>{{ country.country }} <i class="fa fa-chevron-down"></i><i class="fa fa-chevron-up"></i></span>
+                                    {% endif %}
+                                {% endfor %}
+                            {% endif %}
+                        </span>
+
+                        <div class="list">
+                            <a href="{{ path('vc_web_references_2', {year: selectedYear, category: selectedCategoryUrl }) }}">Vše</a>
+                            {% for country in countries %}
+                                <a href="{{ path('vc_web_references', {categoryUrl: selectedCategoryUrl, year: selectedYear, country: country.country }) }}">
+                                    {{ country.country }}
+                                </a>
+                            {% endfor %}
+                        </div>
+
+                    </div>
+
+                    <div class="projects-select closed">
+                        <span class="button">
+                            {% if selectedYear == null %}
+                                <span>Rok <i class="fa fa-chevron-down"></i><i class="fa fa-chevron-up"></i></span>
+                            {% else %}
+                                {% for year in years %}
+                                    {% if year.year == selectedYear %}
+                                        <span>{{ year.year }} <i class="fa fa-chevron-down"></i><i class="fa fa-chevron-up"></i></span>
+                                    {% endif %}
+                                {% endfor %}
+                            {% endif %}
+                        </span>
+
+                        <div class="list">
+                            <a href="{{ path('vc_web_references_2', {country: selectedCountry, category: selectedCategoryUrl }) }}">Vše</a>
+                            {% for year in years%}
+                                <a href="{{ path('vc_web_references', {categoryUrl: selectedCategoryUrl, year: year.year, country: selectedCountry }) }}">
+                                    {{ year.year }}
+                                </a>
+                            {% endfor %}
+                        </div>
+
+                    </div>
+
+                    <div class="projects-select closed" style="margin-left: 2em;">
+                        <span class="button">
+                            <span>Seřadit <i class="fa fa-chevron-down"></i><i class="fa fa-chevron-up"></i></span>
+                        </span>
+
+                        <div class="list">
+                            <a href="{{ path('vc_web_references_2', {country: selectedCountry, category: selectedCategoryUrl, year: selectedYear, sort: 'name' }) }}">Název</a>
+                            <a href="{{ path('vc_web_references_2', {country: selectedCountry, category: selectedCategoryUrl, year: selectedYear, sort: 'year' }) }}">Rok</a>
+                        </div>
+                    </div>
+
+                    <div class="projects-select closed">
+                        <span class="button">
+                            <span>Zobrazit <i class="fa fa-chevron-down"></i><i class="fa fa-chevron-up"></i></span>
+                        </span>
+
+                        <div class="list">
+                            <a href="{{ path('vc_web_references_2', {country: selectedCountry, category: selectedCategoryUrl, year: selectedYear, display: 'grid' }) }}">Obrázky</a>
+                            <a href="{{ path('vc_web_references_2', {country: selectedCountry, category: selectedCategoryUrl, year: selectedYear, display: 'list' }) }}">Seznam</a>
+                        </div>
+                    </div>
+                    </div>
+            </h2>
+        </div>
+
+
+
+
+        <div class="clearfix"></div>
+
+
+        {% if display == 'list' %}
+        <div class="col-xs-12">
+            <table>
+                <tr>
+                    <th>Název</th>
+                    <th>Místo</th>
+                    <th>Rok</th>
+                    <th>Investor</th>
+                </tr>
+        {% endif %}
+
+        {% for reference in references %}
+            {% if display == 'grid' %}
+                {% include '@VCWeb/Reference/listItem.html.twig' %}
+
+                {% if loop.index % 2 == 0 %}
+                    <div class="clearfix visible-sm-block"></div>
+                {% endif %}
+                {% if loop.index % 3 == 0 %}
+                    <div class="clearfix visible-md-block"></div>
+                {% endif %}
+                {% if loop.index % 3 == 0 %}
+                    <div class="clearfix visible-lg-block"></div>
+                {% endif %}
+            {% else %}
+                {% include '@VCWeb/Reference/listRow.html.twig' %}
+            {% endif %}
+
+
+        {% endfor %}
+
+        {% if display == 'list' %}
+            </table>
+        </div>
+        {% else %}
+            <div class="clearfix visible-sm-block"></div>
+            <div class="clearfix visible-md-block"></div>
+            <div class="clearfix visible-lg-block"></div>
+        {% endif %}
+    </div>
+    </div>
+
+    <div class="clearfix"></div>
+    <br/><br/>
+{% endblock %}

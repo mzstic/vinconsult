@@ -1,0 +1,28 @@
+{% extends 'VCAdminBundle::layout.html.twig' %}
+
+{% block content %}
+
+    <div class="row">
+        {% if not reference.id %}
+            <h2>Nová reference</h2>
+        {% else %}
+            <h2>
+                <a href="{{ path('vc_admin_reference_edit', {referenceId: reference.id}) }}">Editace</a> -
+                <a href="{{ path('vc_admin_reference_photos', {referenceId: reference.id}) }}">Upravit fotky</a> -
+                <a href="{{ path('vc_admin_reference_upload', {referenceId: reference.id}) }}">Nahrát fotky</a>
+            </h2>
+        {% endif %}
+    </div>
+
+    <div class="row">
+        <div class="panel panel-default">
+            <div class="panel-body">
+
+                {{ form(form) }}
+
+
+            </div>
+        </div>
+    </div>
+
+{% endblock %}

@@ -1,0 +1,7 @@
+
+<tr {% if loop.index % 2 == 0 %}class="even"{% endif %}>
+    <td><a href="{{ path('vc_web_reference', {referenceId: reference.id}) }}">{{ reference.building }}</a></td>
+    <td>{{ reference.country }}, {{ reference.city }}</td>
+    <td>{{ reference.year }}</td>
+    <td>{{ reference.investor }}</td>
+</tr>

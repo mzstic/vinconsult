@@ -1,0 +1,112 @@
+{% extends '@VCWeb/layout.html.twig' %}
+
+{% block body %}
+    <div class="content">
+        <div class="cover-photo">
+            <div class="photo" style="background-image: url('{{ asset('contact/mapa winconsult3.png') }}');">
+                <div class="h2">
+                    <h2>
+
+                        <span class="main">Kontakt</span><br/>
+                        <span class="sub">Skupina Inros Lackner</span>
+                    </h2>
+                </div>
+            </div>
+        </div>
+        <div class="text down">
+            <h2>Kontakt</h2>
+            <div class="row">
+                <div class="col-sm-3">
+                    <h3 style="text-align: left;">VIN CONSULT</h3>
+                    <p>
+                        VIN Consult s.r.o.
+                        Jeremenkova 88/763<br/>
+                        14000 Praha 4<br/>
+                        00420 244104010<br/>
+                        vin@vinconsult.cz
+                        <img src="{{ asset('contact/VIN_kancelar.JPG') }}" style="padding: 0.5em 0;" />
+                    </p>
+                </div>
+                <div class="col-sm-9">
+                    <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBw4qm_Wx22Tm6fogcKaugpaSJKThyIX0E"></script>
+                    <script type="text/javascript">
+                        google.maps.event.addDomListener(window, 'load', init);
+                        google.maps.event.addDomListener(window, 'resize', init);
+
+                        function init() {
+                            var latlng = new google.maps.LatLng(50.043279, 14.428463);
+                            var mapOptions = {
+                                scrollwheel: false,
+                                zoom: 14,
+                                center: latlng,
+                                styles: [{"featureType":"administrative","elementType":"labels.text.fill","stylers":[{"color":"#0c0b0b"}]},{"featureType":"landscape","elementType":"all","stylers":[{"color":"#f2f2f2"}]},{"featureType":"poi","elementType":"all","stylers":[{"visibility":"off"}]},{"featureType":"road","elementType":"all","stylers":[{"saturation":-100},{"lightness":45}]},{"featureType":"road","elementType":"labels.text.fill","stylers":[{"color":"#090909"}]},{"featureType":"road.highway","elementType":"all","stylers":[{"visibility":"simplified"}]},{"featureType":"road.arterial","elementType":"labels.icon","stylers":[{"visibility":"off"}]},{"featureType":"transit","elementType":"all","stylers":[{"visibility":"off"}]},{"featureType":"water","elementType":"all","stylers":[{"color":"#d4e4eb"},{"visibility":"on"}]},{"featureType":"water","elementType":"geometry.fill","stylers":[{"visibility":"on"},{"color":"#fef7f7"}]},{"featureType":"water","elementType":"labels.text.fill","stylers":[{"color":"#9b7f7f"}]},{"featureType":"water","elementType":"labels.text.stroke","stylers":[{"color":"#fef7f7"}]}]
+                            };
+                            var mapElement = document.getElementById('googleMaps-1');
+                            var map = new google.maps.Map(mapElement, mapOptions);
+                            var marker = new google.maps.Marker({
+                                position: latlng,
+                                map: map,
+                                url: 'https://www.google.de/maps/place/Jeremenkova+763%2F88,+140+00+Praha+4-Podol%C3%AD/@50.0431138,14.4262426,17z/data=!4m5!3m4!1s0x470b940ea8fafb69:0x5b653fab7deb950!8m2!3d50.0431104!4d14.4284313'
+                            });
+                            marker.addListener('click', function() {
+                                window.open(marker.url,'_blank');
+                            });
+                        }
+                    </script>
+                    <div id="googleMaps-1" class="googleMaps" style="position: relative; overflow: hidden; height: 500px; width: 100%;"></div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-9 pull-right">
+                    <h2 style="text-align: left;">Jak se k nám dostanete</h2>
+                    <h3 style="text-align: left;">Z hlavního nádraží:</h3>
+                    <p>Metrem C na stanici Budějovická a dále 3 zastávky autobusem 118 do stanice Nové Podolí. Vchod do budovy je přímo proti zastávce autobusu.</p>
+
+                    <h3 style="text-align: left;">Z letiště V. Havla:</h3>
+                    <p>Autobusem 100 na stanici metra B Zličín, dále metrem směrem do centra. Vystupte na stanici Smíchovské nádraží a pokračujte autobusem 118 do zastávky Nové Podolí. Vchod do budovy je přímo proti zastávce autobusu.</p>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-3">
+                    <h3 style="text-align: left;">INROS LACKNER</h3>
+                    <p>
+                        INROS LACKNER SE<br/>
+                        Rosa-Luxemburg-Str. 16<br/>
+                        D-18055 Rostock<br/>
+                        Tel: 0049 381456780<br/>
+                        rostock@inros-lackner.de
+                        <img src="{{ asset('contact/standort_rostock_medium.jpg') }}" style="padding: 0.5em 0;" />
+                    </p>
+                </div>
+                <div class="col-sm-9">
+                    <script type="text/javascript">
+                        google.maps.event.addDomListener(window, 'load', init);
+                        google.maps.event.addDomListener(window, 'resize', init);
+
+                        function init() {
+                            var latlng = new google.maps.LatLng(54.07891, 12.13417);
+                            var mapOptions = {
+                                scrollwheel: false,
+                                zoom: 14,
+                                center: latlng,
+                                styles: [{"featureType":"administrative","elementType":"labels.text.fill","stylers":[{"color":"#0c0b0b"}]},{"featureType":"landscape","elementType":"all","stylers":[{"color":"#f2f2f2"}]},{"featureType":"poi","elementType":"all","stylers":[{"visibility":"off"}]},{"featureType":"road","elementType":"all","stylers":[{"saturation":-100},{"lightness":45}]},{"featureType":"road","elementType":"labels.text.fill","stylers":[{"color":"#090909"}]},{"featureType":"road.highway","elementType":"all","stylers":[{"visibility":"simplified"}]},{"featureType":"road.arterial","elementType":"labels.icon","stylers":[{"visibility":"off"}]},{"featureType":"transit","elementType":"all","stylers":[{"visibility":"off"}]},{"featureType":"water","elementType":"all","stylers":[{"color":"#d4e4eb"},{"visibility":"on"}]},{"featureType":"water","elementType":"geometry.fill","stylers":[{"visibility":"on"},{"color":"#fef7f7"}]},{"featureType":"water","elementType":"labels.text.fill","stylers":[{"color":"#9b7f7f"}]},{"featureType":"water","elementType":"labels.text.stroke","stylers":[{"color":"#fef7f7"}]}]
+                            };
+                            var mapElement = document.getElementById('googleMaps-2');
+                            var map = new google.maps.Map(mapElement, mapOptions);
+                            var marker = new google.maps.Marker({
+                                position: latlng,
+                                map: map,
+                                url: 'https://www.google.cz/maps/place/Rosa-Luxemburg-Stra%C3%9Fe+16,+18055+Rostock,+Germany/@54.0789131,12.1319813,17z/data=!3m1!4b1!4m5!3m4!1s0x47ac50a98a097bbf:0x320820cccb3b78e6!8m2!3d54.07891!4d12.13417?hl=en'
+                            });
+                            marker.addListener('click', function() {
+                                window.open(marker.url,'_blank');
+                            });
+                        }
+                    </script>
+                    <div id="googleMaps-2" class="googleMaps" style="position: relative; overflow: hidden; height: 500px; width: 100%;"></div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+{% endblock %}

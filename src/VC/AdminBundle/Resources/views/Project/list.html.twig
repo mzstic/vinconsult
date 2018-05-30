@@ -1,0 +1,43 @@
+{% extends 'VCAdminBundle::layout.html.twig' %}
+
+{% block content %}
+<div class="row">
+    {% if references %}
+        <h2>Přehled právě projektujeme</h2>
+
+        <table class="table table-striped table-bordered table-hover">
+            <thead>
+            <tr>
+                <th>ID</th>
+                <th>Název</th>
+                <th>Klient</th>
+                <th>Rok</th>
+                <th>Akce</th>
+            </tr>
+            </thead>
+            <tbody>
+                {% for reference in references %}
+                    <tr {% if reference.important %}class="success"{% endif %}>
+                        <td>{{ reference.id }}</td>
+                        <td>{{ reference.title }}</td>
+                        <td>{{ reference.client }}</td>
+                        <td>{{ reference.year }}</td>
+                        <td>
+                            <a href="{{ path('vc_admin_project_edit', {referenceId: reference.id}) }}" class="btn btn-info btn-circle" title="Upravit"><i class="fa fa-pencil"></i></a>
+                            <a href="{{ path('vc_admin_project_photos', {referenceId: reference.id}) }}" class="btn btn-success btn-circle" title="Řadit fotky"><i class="fa fa-camera"></i></a>
+                            <a href="{{ path('vc_admin_project_upload', {referenceId: reference.id}) }}" class="btn btn-warning btn-circle" title="Nahrát fotky"><i class="fa fa-upload"></i></a>
+                            <a href="" class="btn btn-danger btn-circle" title="Odstranit"><i class="fa fa-trash"></i></a>
+                        </td>
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+
+    {% else %}
+        <h2>Sekce právě projektujeme je zatím prázdná.</h2>
+        <a class="btn btn-success" href="{{ path('vc_admin_project_edit', {referenceId: 0}) }}">Nová položka</a>
+    {% endif %}
+</div>
+
+
+{% endblock %}
