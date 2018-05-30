@@ -51,6 +51,19 @@ class NewsController extends Controller
 				"aktualne/02_Hadovita/09-ObjA,B,C_severní fasáda.JPG",
 			],
 		],
+		3 => [
+			"title" => "Stavba muzea čokolády v Čestlicích v plném tempu",
+			"date" => "28. 05. 2018",
+			"text" => "<p>Přestavba areálu bývalého autoservisu v Čestlicích na \"Muzeum čokolády\" konečně začíná nabírat tempo. Projekt vestavby a přístavby je velmi komplikovaný jak dispozičně, tak technologicky, jelikož nový charakter provozu je zásadně odlišný od původního. Oproti původním předpokladům bylo navíc nutno rekonstruovat celý odvodňovací systém, čímž stavba nabrala termínový skluz téměř dva měsíce.</p>
+<p>Jednostupňový projekt pro belgického investora je m.j. zajímavý způsobem řízení stavby, který ignoruje aktuální trendy projektové přípravy. Během stavby se průběžně upravuje dispozice a koordinace profesí se upřesňuje bezprostředně před realizací, prostě \"francouzský styl\" stavění. Snad kdyby se trochu pozornosti věnovalo projektu, mohlo to být už hotové...</p>",
+			"photos" => [
+				"aktualne/03_Coko_Cestlice/01-83.jpg",
+				"aktualne/03_Coko_Cestlice/02-36.jpg",
+				"aktualne/03_Coko_Cestlice/03-48.jpg",
+				"aktualne/03_Coko_Cestlice/04-28.jpg",
+				"aktualne/03_Coko_Cestlice/05-29.jpg",
+			],
+		],
 	];
 
 	public function listAction()
