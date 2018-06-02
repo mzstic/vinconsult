@@ -9,10 +9,6 @@ vc_web:
 _liip_imagine:
     resource: "@LiipImagineBundle/Resources/config/routing.xml"
 
-app:
-    resource: @AppBundle/Controller/
-    type:     annotation
-
 logout:
     path:   /administrace/logout
 
