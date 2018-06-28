@@ -1,5 +1,4 @@
 <?php
-
 namespace VC\AdminBundle\Controller;
 
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
@@ -7,9 +6,7 @@ use Symfony\Component\HttpFoundation\Request;
 use VC\WebBundle\Entity\StaticText;
 use VC\WebBundle\Entity\TextPhoto;
 
-
 /**
- * Class StaticTextController
  * @author Martin Patera <mzstic@gmail.com>
  */
 class StaticTextController extends Controller
@@ -22,7 +19,7 @@ class StaticTextController extends Controller
 			->findAll();
 
 		$data = [
-			'texts' => $texts
+			'texts' => $texts,
 		];
 
 		return $this->render('VCAdminBundle:StaticText:admin.html.twig', $data);
@@ -40,7 +37,7 @@ class StaticTextController extends Controller
 			->add('url', 'text')
 			->add('title', 'text')
 			->add('text', 'textarea', ['required' => false, 'attr' => ['class'=>'rich']])
-			->add('save', 'submit', ['label' => 'Uložit text'])
+			->add('save', 'submit', ['label' => 'Uložit text', 'attr' => ['class' => 'btn btn-success'],])
 			->getForm();
 
 		$form->handleRequest($request);
@@ -71,7 +68,7 @@ class StaticTextController extends Controller
 		$builder = $this->createFormBuilder($formData)
 			->add('sort', 'hidden')
 			->add('delete', 'hidden')
-			->add('savePhotos', 'submit', ['label' => 'Uložit změny']);
+			->add('savePhotos', 'submit', ['label' => 'Uložit změny', 'attr' => ['class' => 'btn btn-success'],]);
 
 		foreach ($text->getPhotos() as $photo) {
 			$builder->add('photo' . $photo->getId(), 'text');

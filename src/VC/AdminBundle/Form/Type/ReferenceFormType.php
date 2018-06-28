@@ -52,14 +52,16 @@ class ReferenceFormType extends AbstractType
             'label' => 'Klient',
             'attr' => [
                 'class' => 'form-control'
-            ]
+            ],
+	        'required' => false,
         ]);
 
         $builder->add('description', 'textarea', [
             'label' => 'Popis',
             'attr' => [
                 'class' => 'form-control'
-            ]
+            ],
+	        'required' => false,
         ]);
 
         $builder->add('performances', 'text', [
@@ -94,19 +96,22 @@ class ReferenceFormType extends AbstractType
             'label' => 'HIP',
             'attr' => [
                 'class' => 'form-control'
-            ]
+            ],
+	        'required' => false,
         ]);
 
         $builder->add('commission_number', 'text', [
             'label' => 'Č. zakázky',
             'attr' => [
                 'class' => 'form-control'
-            ]
+            ],
+	        'required' => false,
         ]);
 
 
         $builder->add('save','submit', [
-            'label' => 'Uložit'
+            'label' => 'Uložit',
+	        'attr' => ['class' => 'btn btn-success'],
         ]);
 
     }

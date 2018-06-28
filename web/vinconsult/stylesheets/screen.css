@@ -4742,6 +4742,36 @@ body > * {
   margin-left: 1em;
 }
 
+/* line 71, ../sass/_homepage.scss */
+.content-home {
+  text-align: left;
+  max-width: 82.5em;
+  margin: 0 auto;
+}
+/* line 75, ../sass/_homepage.scss */
+.content-home .text {
+  min-height: auto;
+}
+
+/* line 80, ../sass/_homepage.scss */
+.paralaxa {
+  /* Set a specific height */
+  height: 80vh;
+  /* Create the parallax scrolling effect */
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+/* line 91, ../sass/_homepage.scss */
+.slick-slider {
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
 /* line 1, ../sass/_references.scss */
 .projects-select {
   float: left;

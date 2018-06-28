@@ -1,7 +1,6 @@
 <?php
-
 namespace VC\AdminBundle\Controller;
-use Ddeboer\DataImport\Reader\CsvReader;
+
 use Ddeboer\DataImport\Writer\CsvWriter;
 use Doctrine\ORM\Id\AssignedGenerator;
 use Doctrine\ORM\Mapping\ClassMetadata;
@@ -9,17 +8,12 @@ use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\Finder\Finder;
 use Symfony\Component\HttpFoundation\File\UploadedFile;
 use Symfony\Component\HttpFoundation\Request;
-use Symfony\Component\Form\FormBuilder;
-use Symfony\Component\Validator\Constraints\Date;
 use VC\AdminBundle\Form\Type\ReferenceFormType;
 use VC\WebBundle\Entity\Category;
 use VC\WebBundle\Entity\Photo;
 use VC\WebBundle\Entity\Reference;
-use VC\WebBundle\VCWebBundle;
-
 
 /**
- * Class ReferenceController
  * @author Martin Patera <mzstic@gmail.com>
  */
 class ReferenceController extends Controller
@@ -47,6 +41,10 @@ class ReferenceController extends Controller
 
         $form->handleRequest($request);
         if ($form->isValid()) {
+	        $em = $this->getDoctrine()->getManager();
+	        $data = $form->getData();
+	        $em->persist($data);
+	        $em->flush();
 	        // @TODO ulozit!!!
 
             return $this->redirectToRoute('vc_admin_reference_edit', ['referenceId' => $referenceId]);
@@ -71,7 +69,7 @@ class ReferenceController extends Controller
         $builder = $this->createFormBuilder($formData)
             ->add('sort', 'hidden')
             ->add('delete', 'hidden')
-            ->add('savePhotos', 'submit', ['label' => 'Uložit změny']);
+            ->add('savePhotos', 'submit', ['label' => 'Uložit změny', 'attr' => ['class' => 'btn btn-success'],]);
 
         foreach ($reference->getPhotos() as $photo) {
             $builder->add('photo' . $photo->getId(), 'text');
@@ -85,13 +83,13 @@ class ReferenceController extends Controller
             $photoRepository = $this->getDoctrine()->getRepository('VCWebBundle:Photo');
             $data = $form->getData();
 
-            $sortIds = explode(',', $data['sort']);
+            $sortIds = !empty($data['sort']) ? explode(',', $data['sort']) : [];
             $sort = 0;
             foreach ($sortIds as $id) {
                 $photo = $photoRepository->findOneBy(['id' => $id]);
                 $photo->setSort($sort++);
 
-                $photo->setDescription($data['photo'.$id]);
+                $photo->setDescription($data['photo' . $id]);
 
                 $em->persist($photo);
                 $em->flush();
@@ -163,7 +161,7 @@ class ReferenceController extends Controller
 
         $form = $this->createFormBuilder([])
             ->add('file', 'file', ['label' => 'CSV Soubor'])
-            ->add('import', 'submit', ['label' => 'Importovat'])
+            ->add('import', 'submit', ['label' => 'Importovat', 'attr' => ['class' => 'btn btn-success'],])
             ->getForm();
 
         $form->handleRequest($request);

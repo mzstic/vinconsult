@@ -43,8 +43,23 @@
     {% endblock %}
     <div class="clearfix"></div>
 </main>
-<footer class="footer-small fixed">
+{#<footer class="footer-small fixed">
     VIN Consult s. r. o., Jeremenkova 763/88, 140 00 Praha 4, Czech Republic, Tel.: (+420) 244 104 010, E-mail: vin@vinconsult.cz
+</footer>#}
+<footer class="footer-small footer-3col">
+    <div class="row">
+        <div class="col-xs-4">
+            <img src="{{ asset('images/vinconsult-logo-w.png') }}" alt="VIN Consult logo" class="logo-w" style="width: 85px;"/><br/>
+        </div>
+        <div class="col-xs-4">
+            VIN Consult s. r. o.<br/>
+            Jeremenkova 763/88<br/>
+            CZ - 14000 Praha 4
+        </div>
+        <div class="col-xs-4">
+            Tel.: (+420) 244 104 010<br/>E-mail: vin@vinconsult.cz
+        </div>
+    </div>
 </footer>
 
 </body>

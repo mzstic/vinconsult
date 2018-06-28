@@ -5,7 +5,6 @@ use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Request;
 
 /**
- * Class ReferenceController
  * @author Martin Patera <mzstic@gmail.com>
  */
 class ReferenceController extends Controller

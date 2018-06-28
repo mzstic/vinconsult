@@ -1,12 +1,10 @@
 <?php
-
 namespace VC\AdminBundle\Controller;
+
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Request;
 
-
 /**
- * Class SecurityController
  * @author Martin Patera <mzstic@gmail.com>
  */
 class SecurityController extends Controller

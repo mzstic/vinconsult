@@ -10529,12 +10529,25 @@ $(document).ready(function() {
         }
 
         $target = $(".content .text.down");
-        if ($target && (iScrollPos < 400)) {
+        if ($target && $target.length > 0 && (iScrollPos < 400)) {
             if (iCurScrollPos > iScrollPos) {
                 scrolled = true;
                 iCurScrollPos = $target.offset().top;
                 $('html, body').animate({
                     scrollTop: $target.offset().top
+                }, 2000);
+            } else {
+
+            }
+        }
+
+        $target2 = $(".content-home");
+        if ($target2 && $target2.length > 0 && (iScrollPos < 400)) {
+            if (iCurScrollPos > iScrollPos) {
+                scrolled = true;
+                iCurScrollPos = $target2.offset().top;
+                $('html, body').animate({
+                    scrollTop: $target2.offset().top
                 }, 2000);
             } else {
 

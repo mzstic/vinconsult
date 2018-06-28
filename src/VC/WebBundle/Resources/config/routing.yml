@@ -10,20 +10,13 @@ vc_web_references:
     path:     /projekty/{categoryUrl}
     defaults: { _controller: VCWebBundle:Reference:list, categoryUrl: null }
 
-
-
 vc_web_reference:
-    path:     /detail-reference/{referenceId}
+    path:     /detail-projektu/{referenceId}
     defaults: { _controller: VCWebBundle:Reference:detail }
 
 vc_web_career:
     path:     /zamestnani/
     defaults: { _controller: VCWebBundle:Default:career }
-
-
-vc_web_page:
-    path:     /stranka/{url}
-    defaults: { _controller: VCWebBundle:Default:page }
 
 vc_web_contact:
     path:     /kontakt/

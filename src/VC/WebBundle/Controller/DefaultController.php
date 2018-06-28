@@ -1,9 +1,11 @@
 <?php
-
 namespace VC\WebBundle\Controller;
 
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 
+/**
+ * @author Martin Patera <mzstic@gmail.com>
+ */
 class DefaultController extends Controller
 {
     public function indexAction()
@@ -14,24 +16,9 @@ class DefaultController extends Controller
 		]);
     }
 
-    public function pageAction($url)
-    {
-        $repository = $this->getDoctrine()->getRepository('VCWebBundle:StaticText');
-        $page = $repository->findOneBy(['url' => $url]);
-        if (! $page) {
-            return $this->createNotFoundException('Tato stránka neexistuje.');
-        }
-        return $this->render('VCWebBundle:Default:page.html.twig', [
-            'page' => $page
-        ]);
-    }
-
     public function mainMenuAction()
     {
-        $mainMenu = $this->getDoctrine()->getRepository('VCWebBundle:MainMenu')->getMainMenu();
-        return $this->render('VCWebBundle:Default:mainMenu.html.twig', [
-            'menuItems' => $mainMenu
-        ]);
+        return $this->render('VCWebBundle:Default:mainMenu.html.twig', []);
     }
 
 	public function newsAction($id)

@@ -58,7 +58,7 @@ class ReferenceRepository extends EntityRepository
             $sortByQuery = 'r.building';
         }
 
-        if ($display === 'table') {
+        if ($display === 'list') {
 	        $builder = $this
 		        ->createQueryBuilder('r')
 		        ->leftJoin('r.photos', 'p')

@@ -6,6 +6,9 @@ use Symfony\Component\HttpFoundation\File\UploadedFile;
 use Symfony\Component\HttpFoundation\Request;
 use VC\WebBundle\Entity\HomeBox;
 
+/**
+ * @author Martin Patera <mzstic@gmail.com>
+ */
 class DefaultController extends Controller
 {
     public function indexAction()
@@ -44,7 +47,8 @@ class DefaultController extends Controller
 		]);
 
 		$fb->add('save', 'submit', [
-			'label' => 'Uložit'
+			'label' => 'Uložit',
+			'attr' => ['class' => 'btn btn-success'],
 		]);
 
 		$form = $fb->getForm();

@@ -1,19 +1,14 @@
 <?php
-
 namespace VC\AdminBundle\Controller;
 
-use Ddeboer\DataImport\Reader\CsvReader;
-use Doctrine\ORM\Id\AssignedGenerator;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\File\UploadedFile;
 use Symfony\Component\HttpFoundation\Request;
 use VC\AdminBundle\Form\Type\ReferenceFormType;
-use VC\WebBundle\Entity\Category;
 use VC\WebBundle\Entity\Photo;
 use VC\WebBundle\Entity\Reference;
 
 /**
- * Class ProjectController
  * @author Martin Patera <mzstic@gmail.com>
  */
 class ProjectController extends Controller
@@ -29,7 +24,6 @@ class ProjectController extends Controller
         return $this->render('VCAdminBundle:Project:list.html.twig', [
             'references' => $references
         ]);
-
     }
 
     public function editAction(Request $request, $referenceId)
@@ -76,7 +70,7 @@ class ProjectController extends Controller
         $builder = $this->createFormBuilder($formData)
             ->add('sort', 'hidden')
             ->add('delete', 'hidden')
-            ->add('savePhotos', 'submit', ['label' => 'Uložit změny']);
+            ->add('savePhotos', 'submit', ['label' => 'Uložit změny', 'attr' => ['class' => 'btn btn-success'],]);
 
         foreach ($reference->getPhotos() as $photo) {
             $builder->add('photo' . $photo->getId(), 'text');

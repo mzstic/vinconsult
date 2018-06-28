@@ -67,3 +67,30 @@
   width: 48%;
   margin-left: 1em;
 }
+
+.content-home {
+  text-align: left;
+  max-width: 82.5em;
+  margin: 0 auto;
+  .text {
+    min-height: auto;
+  }
+}
+
+.paralaxa {
+  /* Set a specific height */
+  height: 80vh;
+
+  /* Create the parallax scrolling effect */
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.slick-slider {
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}

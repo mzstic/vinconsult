@@ -10,50 +10,27 @@
 
             <div class="clearfix"></div>
 
-            <div class="reference-list-item col-lg-4 col-md-4 col-sm-6">
-                <div class="inner">
-                    <a href="{{ path('vc_web_news', {id: 1}) }}">
-                        <img width="100%" src="{{ asset('aktualne/01_IL_Hamburg/01-VIN_CAT.jpg') }}" alt="" title="" />
-                        <div class="info">
-                            <h3>Exkurze na stavbu Docklands v Hamburgu</h3>
-                            <p>
-                                21. 08. 2017<br/>
-                                Ve dnech 18.-19. 08. 2017 navštívili naši kolegové stavbu Docklands v Hamburgu, spojenou s návštěvou pobočky Inros Lackner Hamburg.
-                            </p>
-                        </div>
-                    </a>
+            {% for newItem in news %}
+                {% set mainPhoto = newItem.photos.get(0) %}
+                <div class="reference-list-item col-lg-4 col-md-4 col-sm-6">
+                    <div class="inner">
+                        <a href="{{ path('vc_web_news', {id: newItem.id}) }}">
+                            {% if mainPhoto %}
+                                <img width="100%" src="{{ mainPhoto.webPath|imagine_filter('projekty_thumb') }}" alt="" title="" />
+                            {% else %}
+                                <img width="100%" src="{{ 'images/noimage.png'|imagine_filter('projekty_thumb') }}" alt="" title="" />
+                            {% endif %}
+                            <div class="info">
+                                <h3>{{ newItem.title }}</h3>
+                                <p>
+                                    {{ newItem.date|date("d. m. Y") }}<br/>
+                                    {{ newItem.annotation }}
+                                </p>
+                            </div>
+                        </a>
+                    </div>
                 </div>
-            </div>
-
-            <div class="reference-list-item col-lg-4 col-md-4 col-sm-6">
-                <div class="inner">
-                    <a href="{{ path('vc_web_news', {id: 2}) }}">
-                        <img width="100%" src="{{ asset('aktualne/02_Hadovita/01-Obj B,C_pohled do vnitrobloku (1).JPG') }}" alt="" title="" />
-                        <div class="info">
-                            <h3>Bytový dům Hadovitá před dokončením</h3>
-                            <p>
-                                18. 05. 2018<br/>
-                                Projekt bytového komplexu Hadovitá v Praze 4 Michli spěje k úspěšnému dokončení hrubé stavby.
-                            </p>
-                        </div>
-                    </a>
-                </div>
-            </div>
-
-            <div class="reference-list-item col-lg-4 col-md-4 col-sm-6">
-                <div class="inner">
-                    <a href="{{ path('vc_web_news', {id: 3}) }}">
-                        <img width="100%" src="{{ asset('aktualne/03_Coko_Cestlice/01-83.jpg') }}" alt="" title="" />
-                        <div class="info">
-                            <h3>Stavba muzea čokolády v Čestlicích v plném tempu</h3>
-                            <p>
-                                28. 05. 2018<br/>
-                                Přestavba areálu bývalého autoservisu v Čestlicích na "Muzeum čokolády" konečně začíná nabírat tempo.
-                            </p>
-                        </div>
-                    </a>
-                </div>
-            </div>
+            {% endfor %}
 
         </div>
     </div>

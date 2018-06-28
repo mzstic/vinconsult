@@ -1,12 +1,11 @@
 {% extends '@VCWeb/layout.home.html.twig' %}
 
-
 {% block slider %}
 
 {% endblock %}
 
 {% block body %}
-    <div class="slick-slider js-slick">
+<div class="slick-slider js-slick">
     {% for box in homeBoxes %}
         <div>
             <div class="photo is-animating" style="background-image: url('{{ asset('home/' ~ box.photoPath) }}');">
@@ -19,4 +18,101 @@
         </div>
     {% endfor %}
     </div>
+    <div class="content-home" >
+        <div class="text">
+            <p>
+                Jsme nezávislá inženýrská projektová kancelář a navrhujeme konstrukce a stavby již od roku 1993.<br/>
+                Naším cílem jsou inovativní a zároveň jednoduchá řešení složitých problémů.<br/>
+                <h3><a href="{{ path("vc_web_history") }}"><span>Historie společnosti<span style="top: 4px; position: relative; display: inline-block; left: 10px;" class="fa fa-external-link"></span></span></a></h3>
+
+            </p>
+        </div>
+    </div>
+    <div class="paralaxa" style="background-image: url('home/konstrukce.jpg');"></div>
+    <div>
+        <div class="references">
+            <div class="col-xs-12">
+                <h2>Aktuálně</h2>
+            </div>
+
+            <div class="clearfix"></div>
+
+            <div class="reference-list-item col-lg-4 col-md-6 col-sm-12">
+                <div class="inner">
+                    <a href="/vinconsult/web/novinka/3">
+                        <img width="100%" src="http://mpatera.eu/vinconsult/web/media/cache/projekty_thumb/news/3_6.jpg" alt="" title="">
+                        <div class="info">
+                            <h3>Exkurze na stavbu Docklands v Hamburgu</h3>
+                            <p>
+                                21. 07. 2018<br>
+                                Ve dnech 18.-19. 08. 2017 navštívili naši kolegové stavbu Docklands v Hamburgu, spojenou s návštěvou pobočky Inros Lackner Hamburg.
+                            </p>
+                        </div>
+                    </a>
+                </div>
+            </div>
+            <div class="reference-list-item col-lg-4 col-md-6 col-sm-12">
+                <div class="inner">
+                    <a href="/vinconsult/web/novinka/4">
+                        <img width="100%" src="http://mpatera.eu/vinconsult/web/media/cache/projekty_thumb/news/4_25.JPG" alt="" title="">
+                        <div class="info">
+                            <h3>Bytový dům Hadovitá před dokončením</h3>
+                            <p>
+                                18. 05. 2018<br>
+                                Projekt bytového komplexu Hadovitá v Praze 4 Michli spěje k úspěšnému dokončení hrubé stavby.
+                            </p>
+                        </div>
+                    </a>
+                </div>
+            </div>
+            <div class="reference-list-item col-lg-4 col-md-6 col-sm-12">
+                <div class="inner">
+                    <a href="/vinconsult/web/novinka/5">
+                        <img width="100%" src="http://mpatera.eu/vinconsult/web/media/cache/projekty_thumb/news/5_20.jpg" alt="" title="">
+                        <div class="info">
+                            <h3>Stavba muzea čokolády v Čestlicích v plném tempu</h3>
+                            <p>
+                                28. 05. 2018<br>
+                                Přestavba areálu bývalého autoservisu v Čestlicích na "Muzeum čokolády" konečně začíná nabírat tempo.
+                            </p>
+                        </div>
+                    </a>
+                </div>
+            </div>
+            <div class="clearfix"></div>
+
+        </div>
+    </div>
+    <div class="paralaxa" style="background-image: url('home/kontakt_02.jpg');"></div>
+    <div class="home-map">
+        <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBw4qm_Wx22Tm6fogcKaugpaSJKThyIX0E"></script>
+        <script type="text/javascript">
+            google.maps.event.addDomListener(window, 'load', init);
+            google.maps.event.addDomListener(window, 'resize', init);
+
+            function init() {
+                var latlng = new google.maps.LatLng(50.043279, 14.428463);
+                var mapOptions = {
+                    scrollwheel: false,
+                    zoom: 14,
+                    center: latlng,
+                    styles: [{"featureType":"administrative","elementType":"labels.text.fill","stylers":[{"color":"#0c0b0b"}]},{"featureType":"landscape","elementType":"all","stylers":[{"color":"#f2f2f2"}]},{"featureType":"poi","elementType":"all","stylers":[{"visibility":"off"}]},{"featureType":"road","elementType":"all","stylers":[{"saturation":-100},{"lightness":45}]},{"featureType":"road","elementType":"labels.text.fill","stylers":[{"color":"#090909"}]},{"featureType":"road.highway","elementType":"all","stylers":[{"visibility":"simplified"}]},{"featureType":"road.arterial","elementType":"labels.icon","stylers":[{"visibility":"off"}]},{"featureType":"transit","elementType":"all","stylers":[{"visibility":"off"}]},{"featureType":"water","elementType":"all","stylers":[{"color":"#d4e4eb"},{"visibility":"on"}]},{"featureType":"water","elementType":"geometry.fill","stylers":[{"visibility":"on"},{"color":"#fef7f7"}]},{"featureType":"water","elementType":"labels.text.fill","stylers":[{"color":"#9b7f7f"}]},{"featureType":"water","elementType":"labels.text.stroke","stylers":[{"color":"#fef7f7"}]}]
+                };
+                var mapElement = document.getElementById('googleMaps-1');
+                var map = new google.maps.Map(mapElement, mapOptions);
+                var marker = new google.maps.Marker({
+                    position: latlng,
+                    map: map,
+                    url: 'https://www.google.de/maps/place/Jeremenkova+763%2F88,+140+00+Praha+4-Podol%C3%AD/@50.0431138,14.4262426,17z/data=!4m5!3m4!1s0x470b940ea8fafb69:0x5b653fab7deb950!8m2!3d50.0431104!4d14.4284313'
+                });
+                marker.addListener('click', function() {
+                    window.open(marker.url,'_blank');
+                });
+            }
+        </script>
+        <div id="googleMaps-1" class="googleMaps" style="position: relative; overflow: hidden; height: 80vh; width: 100%;"></div>
+    </div>
+
+
+
 {% endblock %}

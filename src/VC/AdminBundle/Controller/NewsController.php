@@ -1,14 +1,12 @@
 <?php
-
 namespace VC\AdminBundle\Controller;
+
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Request;
 use VC\WebBundle\Entity\News;
 use VC\WebBundle\Entity\NewsPhoto;
 
-
 /**
- * Class NewsController
  * @author Martin Patera <mzstic@gmail.com>
  */
 class NewsController extends Controller
@@ -17,19 +15,18 @@ class NewsController extends Controller
 	{
 		$news = $this->getDoctrine()->getRepository('VCWebBundle:News')->getLatestNews()->getQuery()->getResult();
 
-
 		return $this->render('@VCAdmin/News/list.html.twig', [
 			'news' => $news
 		]);
 	}
 
-	public function editAction(Request $request, $id)
+	public function editAction(Request $request, $newsId)
 	{
 		$newsRepository = $this->getDoctrine()->getRepository('VCWebBundle:News');
-		if ($id == 0) {
+		if ($newsId == 0) {
 			$new = new News();
 		} else {
-			$new = $newsRepository->findOneBy(['id' => $id]);
+			$new = $newsRepository->findOneBy(['id' => $newsId]);
 		}
 
 		$fb = $this->createFormBuilder($new);
@@ -55,7 +52,8 @@ class NewsController extends Controller
 		]);
 
 		$fb->add('save', 'submit', [
-			'label' => 'Uložit'
+			'label' => 'Uložit',
+			'attr' => ['class' => 'btn btn-success'],
 		]);
 
 		$form = $fb->getForm();
@@ -88,7 +86,7 @@ class NewsController extends Controller
 		$builder = $this->createFormBuilder($formData)
 			->add('sort', 'hidden')
 			->add('delete', 'hidden')
-			->add('savePhotos', 'submit', ['label' => 'Uložit změny']);
+			->add('savePhotos', 'submit', ['label' => 'Uložit změny', 'attr' => ['class' => 'btn btn-success']]);
 
 		foreach ($new->getPhotos() as $photo) {
 			$builder->add('photo' . $photo->getId(), 'text');

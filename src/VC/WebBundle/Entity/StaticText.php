@@ -1,13 +1,10 @@
 <?php
-
 namespace VC\WebBundle\Entity;
 
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
- * Text
- *
  * @ORM\Table(name="static_text")
  * @ORM\Entity
  */
@@ -65,7 +62,7 @@ class StaticText
 	 * Set title
 	 *
 	 * @param string $title
-	 * @return Text
+	 * @return self
 	 */
 	public function setTitle($title)
 	{
@@ -88,7 +85,7 @@ class StaticText
 	 * Set url
 	 *
 	 * @param string $url
-	 * @return Text
+	 * @return self
 	 */
 	public function setUrl($url)
 	{
@@ -111,7 +108,7 @@ class StaticText
 	 * Set text
 	 *
 	 * @param string $text
-	 * @return Text
+	 * @return self
 	 */
 	public function setText($text)
 	{

@@ -1,12 +1,9 @@
 <?php
-
 namespace VC\WebBundle\Controller;
 
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 
-
 /**
- * Class StaticTextController
  * @author Martin Patera <mzstic@gmail.com>
  */
 class StaticTextController extends Controller

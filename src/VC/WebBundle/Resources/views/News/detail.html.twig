@@ -6,16 +6,16 @@
             <h3 style="margin-left: 1em;">
                 <a href="{{ path('vc_web_news_list') }}"><i class="fa fa-angle-double-left"></i>&nbsp;Aktuálně</a>
                 &nbsp;&nbsp;|&nbsp;&nbsp;
-                <span style="font-size:1.25em;">{{ title }}</span>
+                <span style="font-size:1.25em;">{{ newItem.title }}</span>
             </h3>
 
             <div id="detail-gallery" class="col-xs-12 gallery" style="padding: 0px !important; width: 100vw; left: 0;">
 
                 <div class="slick-slider js-slick-small" style="position: relative;" >
-                    {% for photo in photos %}
+                    {% for photo in newItem.photos %}
                         <div class="padding: 0 15px;">
-                            <a href="{{ asset(photo) }}" data-lightbox="photos">
-                                <img src="{{ photo|imagine_filter('projekty_thumb') }}" style="padding: 0 .5em;"/>
+                            <a href="{{ asset(photo.webPath) }}" data-lightbox="photos">
+                                <img src="{{ photo.webPath|imagine_filter('projekty_thumb') }}" style="padding: 0 .5em;"/>
                             </a>
                         </div>
 
@@ -23,9 +23,9 @@
                 </div>
                 <div class="clearfix"></div>
                 <div class="col-xs-8 col-xs-offset-2" style="margin-top: 2em;">
-                    <h4>{{ date }}</h4>
+                    <h4>{{ newItem.date|date("d. m. Y") }}</h4>
                     <p>
-                        {{ text|raw }}
+                        {{ newItem.text|raw }}
                     </p>
                 </div>
                 <div class="clearfix"></div>
