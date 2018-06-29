@@ -23,6 +23,20 @@ class ReferenceFormType extends AbstractType
             ]
         ]);
 
+	    $builder->add('country', 'text', [
+		    'label' => 'Země',
+		    'attr' => [
+			    'class' => 'form-control'
+		    ]
+	    ]);
+
+	    $builder->add('city', 'text', [
+		    'label' => 'Místo',
+		    'attr' => [
+			    'class' => 'form-control'
+		    ]
+	    ]);
+
         $builder->add('category', 'entity', [
             'label' => 'Kategorie',
             'class' => 'VC\WebBundle\Entity\Category',
