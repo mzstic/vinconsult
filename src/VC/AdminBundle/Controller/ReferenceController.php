@@ -2,6 +2,7 @@
 namespace VC\AdminBundle\Controller;
 
 use Ddeboer\DataImport\Writer\CsvWriter;
+use Ddeboer\DataImport\Writer\ExcelWriter;
 use Doctrine\ORM\Id\AssignedGenerator;
 use Doctrine\ORM\Mapping\ClassMetadata;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
@@ -330,13 +331,16 @@ class ReferenceController extends Controller
     private function export()
     {
         $references = $this->getDoctrine()->getRepository('VCWebBundle:Reference')->getReferences();
-        $writer = new CsvWriter();
+	    $filename = 'exports/vinconsult_export_'.date('Y_m_d__H_i').'.xlsx';
+	    $file = new \SplFileObject($filename, "w");
+        $writer = new ExcelWriter($file);
+        $writer->prepare();
 
-        $filename = 'exports/vinconsult_export_'.date('Y_m_d__H_i').'.csv';
-        $writer->setStream(fopen($filename, 'w'));
+
+        //$writer->setStream(fopen($filename, 'w'));
 
         $writer->writeItem([
-            'ID',
+//            'ID',
             'Název',
             'Stavba',
             'Země',
@@ -356,9 +360,11 @@ class ReferenceController extends Controller
         foreach ($references as $reference) {
         	/** @var Reference $reference */
             $writer->writeItem([
-                $reference->getId(),
+//                $reference->getId(),
                 $reference->getTitle(),
                 $reference->getBuilding(),
+                $reference->getCountry(),
+                $reference->getCity(),
                 $reference->getInvestor(),
                 $reference->getClient(),
                 $reference->getPerformances(),

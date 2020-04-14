@@ -66,5 +66,9 @@ $(function() {
         uploadMultiple: false,
         dictDefaultMessage: 'Sem přetáhněte soubory pro nahrání.'
     };
+
+    $('#references-list').DataTable({
+        paging: false
+    });
 });
 

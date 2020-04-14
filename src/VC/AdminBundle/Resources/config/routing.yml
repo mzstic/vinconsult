@@ -8,6 +8,10 @@ vc_admin_home_boxes_edit:
     path:     /hlavni-stranka/edit/{id}
     defaults: { _controller: VCAdminBundle:Default:edit, id: 0 }
 
+vc_admin_home_links_edit:
+    path:     /hlavni-stranka-odkazy/
+    defaults: { _controller: VCAdminBundle:HomeLink:editLinks }
+
 vc_admin_reference_list:
     path:     /reference/
     defaults: { _controller: VCAdminBundle:Reference:list }

@@ -90,7 +90,7 @@ class ReferenceController extends Controller
         $categories = $this->getDoctrine()->getRepository('VCWebBundle:Category')->findAll();
 
         if (! $reference) {
-            return $this->createNotFoundException("Reference s tímto ID neexistuje.");
+            throw $this->createNotFoundException("Reference s tímto ID neexistuje.");
         }
 
         return $this->render('VCWebBundle:Reference:detail.html.twig', [

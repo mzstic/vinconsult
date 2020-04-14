@@ -7,7 +7,7 @@
         <p>
             <a href="{{ path('vc_admin_reference_pdf') }}"><i class="fa fa-file-pdf-o"></i> &nbsp;Seznam v PDF.</a>
         </p>
-        <table class="table table-striped table-bordered table-hover">
+        <table class="table table-striped table-bordered table-hover" id="references-list">
             <thead>
             <tr>
                 <th>ID</th>
@@ -28,8 +28,10 @@
                         <td>{{ reference.category.title }}</td>
                         <td>
                             <a href="{{ path('vc_admin_reference_edit', {referenceId: reference.id}) }}" class="btn btn-info btn-circle" title="Upravit"><i class="fa fa-pencil"></i></a>
+                            {#
                             <a href="{{ path('vc_admin_reference_photos', {referenceId: reference.id}) }}" class="btn btn-success btn-circle" title="Řadit fotky"><i class="fa fa-camera"></i></a>
                             <a href="{{ path('vc_admin_reference_upload', {referenceId: reference.id}) }}" class="btn btn-warning btn-circle" title="Nahrát fotky"><i class="fa fa-upload"></i></a>
+                            #}
                             <a href="" class="btn btn-danger btn-circle" title="Odstranit"><i class="fa fa-trash"></i></a>
                         </td>
                     </tr>
@@ -41,6 +43,5 @@
         <h2>V databázi zatím nejsou žádné reference.</h2>
     {% endif %}
 </div>
-
 
 {% endblock %}
