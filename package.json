@@ -10,7 +10,7 @@
     "webpack-dev-server": "^2.6.1"
   },
   "dependencies": {
-    "jquery": "^3.2.1",
+    "jquery": "^3.4.0",
     "lightbox2": "^2.10.0",
     "slick-carousel": "^1.6.0"
   }
