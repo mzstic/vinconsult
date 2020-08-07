@@ -39,7 +39,18 @@ class DefaultController extends Controller
 
 	public function contactAction()
 	{
-		return $this->render('VCWebBundle:Default:contact.html.twig', []);
+		/** @var StaticTextManager $repository */
+		$repository = $this->getDoctrine()->getRepository('VCWebBundle:StaticText');
+		$adresa1 = $repository->findOneByUrl('adresa1');
+		$adresa2 = $repository->findOneByUrl('adresa2');
+		$instrukce = $repository->findOneByUrl('instrukce');
+
+
+		return $this->render('VCWebBundle:Default:contact.html.twig', [
+			'adresa1' => $adresa1,
+			'adresa2' => $adresa2,
+			'instrukce' => $instrukce,
+		]);
 	}
 
 	public function careerAction()

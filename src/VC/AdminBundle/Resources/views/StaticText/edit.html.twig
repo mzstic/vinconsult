@@ -10,7 +10,7 @@
 
 {% block content %}
     <div class="row">
-    {% if text.id %}
+    {#% if text.id %}
         <h2>
             <a href="{{ path('vc_admin_static_text_edit', {id: text.id}) }}">Uprava stránky</a> -
             <a href="{{ path('vc_admin_static_text_photos', {id: text.id}) }}">Upravit fotky</a> -
@@ -18,7 +18,7 @@
         </h2>
     {% else %}
         Nový text
-    {% endif %}
+    {% endif %#}
         {{ form(form) }}
     </div>
 {% endblock %}

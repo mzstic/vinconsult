@@ -6,23 +6,22 @@
 
     <div class="row">
         <div class="col-lg-12">
-            <h2>Administrace stránek</h2>
-            <p>Zde je možné spravovat stránky. <strong>URL</strong> musí odpovídat URL v hlavním menu.<strong><br> Po skončení editace doporučuji vyzkoušet, jestli fungují všechny odkazy z hlavního menu.</strong></p>
+            <h2>Kontakty - editace</h2>
+            <p>Zde je možné spravovat kontakty.</p>
             <div class="panel panel-default">
-                <div class="panel-heading">
+                {#<div class="panel-heading">
                     <a href="{{ path("vc_admin_static_text_edit") }}" title="Přidat nový text" class="btn btn-success btn-circle btn-md"><i class="fa fa-plus"></i></a> Seznam textů
-                </div>
+                </div>#}
                 <!-- /.panel-heading -->
                 <div class="panel-body">
                     <div class="dataTable_wrapper">
                         <table class="table table-striped table-bordered table-hover" id="dataTables-example">
                             <thead>
                             <tr>
-                                <th>URl</th>
-                                <th>Název</th>
-                                <th>Náhled</th>
+                                <th>Kod - nemenit</th>
+                                <th>Popis</th>
+                                <th>Text</th>
                                 <th>Editovat</th>
-
                             </tr>
                             </thead>
                             <tbody>
@@ -34,8 +33,8 @@
                                     <td>{{ text.text|striptags|slice(0, 200)|raw }}</td>
                                     <td>
                                         <a href="{{ path('vc_admin_static_text_edit', {id: text.id}) }}" class="btn btn-info btn-circle" title="Upravit"><i class="fa fa-pencil"></i></a>
-                                        <a href="{{ path('vc_admin_static_text_photos', {id: text.id}) }}" class="btn btn-success btn-circle" title="Řadit fotky"><i class="fa fa-camera"></i></a>
-                                        <a href="{{ path('vc_admin_static_text_upload', {id: text.id}) }}" class="btn btn-warning btn-circle" title="Nahrát fotky"><i class="fa fa-upload"></i></a>
+                                        {#<a href="{{ path('vc_admin_static_text_photos', {id: text.id}) }}" class="btn btn-success btn-circle" title="Řadit fotky"><i class="fa fa-camera"></i></a>
+                                        <a href="{{ path('vc_admin_static_text_upload', {id: text.id}) }}" class="btn btn-warning btn-circle" title="Nahrát fotky"><i class="fa fa-upload"></i></a>#}
                                     </td>
                                 </tr>
                             {% endfor %}
